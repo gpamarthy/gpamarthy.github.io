@@ -302,6 +302,13 @@ body::after {
   }
 }
 
+/* ufo float */
+@keyframes ufo-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-3px) rotate(2deg); }
+}
+.ufo-live { animation: ufo-float 4s ease-in-out infinite; }
+
 /* focus indicators */
 :focus-visible {
   outline: 2px solid rgb(var(--c-accent));

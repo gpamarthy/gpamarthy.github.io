@@ -42,7 +42,7 @@ export default function Nav() {
           onClick={() => setOpen(false)}
           aria-label="Home"
         >
-          <Ufo />
+          <span className="ufo-live inline-block"><Ufo /></span>
         </Link>
 
         <div className="hidden md:flex items-center gap-7">
