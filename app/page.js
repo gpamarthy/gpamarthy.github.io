@@ -10,7 +10,7 @@ export default function Home() {
           Goutham Prasanth<br />Pamarthy
         </h1>
         <p className="body-lg max-w-2xl mt-6">
-          I find the attack paths your scanner missed. OSEP and CRTE certified —
+          I find the attack paths your scanner missed. OSEP and CRTE certified.
           both require passing live proctored attack labs, not a multiple-choice exam.
           I build offensive security tools, harden cloud infrastructure, and respond to incidents.
         </p>
@@ -51,7 +51,7 @@ export default function Home() {
         </h2>
 
         <div className="mt-16 space-y-6">
-          {/* Domino — full card */}
+          {/* Domino.full card */}
           <Link href="/projects#domino" className="block group">
             <article className="surface p-8 md:p-12 border-l-2 border-l-accent/50">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
@@ -60,7 +60,7 @@ export default function Home() {
                   <p className="text-muted text-sm">AWS IAM Privilege Escalation Path Prover</p>
                   <p className="text-zinc-400 mt-4 leading-relaxed text-sm">
                     Prowler tells you 200 individual misconfigs exist. Domino tells you which 5
-                    chain into actual account compromise — and shows you the exact path to get there.
+                    chain into actual account compromise.and shows you the exact path to get there.
                   </p>
                   <div className="flex flex-wrap gap-2 mt-6">
                     <span className="chip">Python</span>
@@ -73,7 +73,7 @@ export default function Home() {
             </article>
           </Link>
 
-          {/* MalForge — compact inline, different layout */}
+          {/* MalForge.compact inline, different layout */}
           <Link href="/projects#malforge" className="block group">
             <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 py-6 px-2 border-b border-surface-bright/50 hover:border-accent/20 transition-colors">
               <div className="md:w-48 shrink-0">

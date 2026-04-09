@@ -13,8 +13,8 @@ const tactics = [
   {
     name: 'Initial Access', id: 'TA0001',
     techniques: [
-      { id: 'T1566', name: 'Phishing', evidence: 'OSEP — macro payloads, HTA delivery' },
-      { id: 'T1190', name: 'Exploit Public-Facing Application', evidence: '20+ web app/API pentests — IDOR, XSS, auth bypass' },
+      { id: 'T1566', name: 'Phishing', evidence: 'OSEP:macro payloads, HTA delivery' },
+      { id: 'T1190', name: 'Exploit Public-Facing Application', evidence: '20+ web app/API pentests:IDOR, XSS, auth bypass' },
     ],
   },
   {
@@ -22,14 +22,14 @@ const tactics = [
     techniques: [
       { id: 'T1059.001', name: 'PowerShell', evidence: 'MalForge output, OSEP, post-exploitation' },
       { id: 'T1059.003', name: 'Windows Command Shell', evidence: 'Payload execution, lateral movement' },
-      { id: 'T1047', name: 'WMI', evidence: 'OSEP — lateral movement via DCOM/WMI' },
+      { id: 'T1047', name: 'WMI', evidence: 'OSEP:lateral movement via DCOM/WMI' },
       { id: 'T1204', name: 'User Execution', evidence: 'Phishing payload delivery chains' },
     ],
   },
   {
     name: 'Persistence', id: 'TA0003',
     techniques: [
-      { id: 'T1053', name: 'Scheduled Task/Job', evidence: 'Cryptojacking IR — attacker used cron persistence' },
+      { id: 'T1053', name: 'Scheduled Task/Job', evidence: 'Cryptojacking IR:attacker used cron persistence' },
       { id: 'T1078', name: 'Valid Accounts', evidence: 'IAM abuse, AD credential compromise' },
       { id: 'T1547', name: 'Boot/Logon Autostart', evidence: 'OSEP persistence mechanisms' },
     ],
@@ -37,20 +37,20 @@ const tactics = [
   {
     name: 'Privilege Escalation', id: 'TA0004',
     techniques: [
-      { id: 'T1134', name: 'Access Token Manipulation', evidence: 'OSEP — token impersonation' },
+      { id: 'T1134', name: 'Access Token Manipulation', evidence: 'OSEP:token impersonation' },
       { id: 'T1068', name: 'Exploitation for Privilege Escalation', evidence: 'Web app and infra pentests' },
-      { id: 'T1558', name: 'Steal/Forge Kerberos Tickets', evidence: 'CRTE — Kerberoasting, Golden/Silver Ticket' },
-      { id: 'T1484', name: 'Domain Policy Modification', evidence: 'CRTE — ADCS abuse (ESC1-8)' },
+      { id: 'T1558', name: 'Steal/Forge Kerberos Tickets', evidence: 'CRTE:Kerberoasting, Golden/Silver Ticket' },
+      { id: 'T1484', name: 'Domain Policy Modification', evidence: 'CRTE:ADCS abuse (ESC1-8)' },
     ],
   },
   {
     name: 'Defense Evasion', id: 'TA0005',
     techniques: [
-      { id: 'T1562', name: 'Impair Defenses', evidence: 'MalForge — AMSI/ETW patching at runtime' },
-      { id: 'T1055', name: 'Process Injection', evidence: 'MalForge — process hollowing, OSEP injection variants' },
-      { id: 'T1027', name: 'Obfuscated Files/Information', evidence: 'MalForge — stackable XOR/AES/RC4/Caesar encryption' },
+      { id: 'T1562', name: 'Impair Defenses', evidence: 'MalForge:AMSI/ETW patching at runtime' },
+      { id: 'T1055', name: 'Process Injection', evidence: 'MalForge:process hollowing, OSEP injection variants' },
+      { id: 'T1027', name: 'Obfuscated Files/Information', evidence: 'MalForge:stackable XOR/AES/RC4/Caesar encryption' },
       { id: 'T1036', name: 'Masquerading', evidence: 'Namespace/class randomization per build' },
-      { id: 'T1218', name: 'System Binary Proxy Execution', evidence: 'MalForge — MSBuild, InstallUtil, rundll32, regsvr32' },
+      { id: 'T1218', name: 'System Binary Proxy Execution', evidence: 'MalForge:MSBuild, InstallUtil, rundll32, regsvr32' },
       { id: 'T1070', name: 'Indicator Removal', evidence: 'Log cleanup, anti-forensics awareness' },
     ],
   },
@@ -58,16 +58,16 @@ const tactics = [
     name: 'Credential Access', id: 'TA0006',
     techniques: [
       { id: 'T1003', name: 'OS Credential Dumping', evidence: 'Mimikatz, Impacket secretsdump, DCSync' },
-      { id: 'T1558', name: 'Steal/Forge Kerberos Tickets', evidence: 'CRTE — Kerberoasting, AS-REP, delegation abuse' },
+      { id: 'T1558', name: 'Steal/Forge Kerberos Tickets', evidence: 'CRTE:Kerberoasting, AS-REP, delegation abuse' },
       { id: 'T1552', name: 'Unsecured Credentials', evidence: 'AWS IAM key auditing, LAPS, GPP passwords' },
-      { id: 'T1649', name: 'Steal/Forge Auth Certificates', evidence: 'CRTE — Certipy, ADCS ESC1-8' },
+      { id: 'T1649', name: 'Steal/Forge Auth Certificates', evidence: 'CRTE:Certipy, ADCS ESC1-8' },
     ],
   },
   {
     name: 'Discovery', id: 'TA0007',
     techniques: [
       { id: 'T1087', name: 'Account Discovery', evidence: 'BloodHound/SharpHound, AD enumeration' },
-      { id: 'T1482', name: 'Domain Trust Discovery', evidence: 'CRTE — cross-forest trust mapping' },
+      { id: 'T1482', name: 'Domain Trust Discovery', evidence: 'CRTE:cross-forest trust mapping' },
       { id: 'T1046', name: 'Network Service Discovery', evidence: 'Nmap, service enumeration' },
       { id: 'T1069', name: 'Permission Groups Discovery', evidence: 'BloodHound, PowerView, IAM policy analysis' },
     ],
@@ -83,7 +83,7 @@ const tactics = [
   {
     name: 'Command & Control', id: 'TA0011',
     techniques: [
-      { id: 'T1071', name: 'Application Layer Protocol', evidence: 'Cobalt Strike, Sliver — HTTP/S, DNS' },
+      { id: 'T1071', name: 'Application Layer Protocol', evidence: 'Cobalt Strike, Sliver:HTTP/S, DNS' },
       { id: 'T1572', name: 'Protocol Tunneling', evidence: 'Ligolo-ng, Chisel, SSH dynamic forwarding' },
       { id: 'T1573', name: 'Encrypted Channel', evidence: 'C2 encrypted comms, TLS implants' },
     ],

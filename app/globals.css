@@ -227,7 +227,7 @@ body::after {
   }
 
   .dash::before {
-    content: '\2014';
+    content: '-';
     color: rgb(var(--c-accent));
     margin-right: 0.75rem;
     flex-shrink: 0;
@@ -264,7 +264,7 @@ body::after {
     box-shadow: 0 0 40px rgb(var(--c-accent) / 0.1);
   }
 
-  /* code blocks — always dark */
+  /* code blocks - always dark */
   .code-block {
     background: #0c0c0f;
     border: 1px solid #1a1a1f;

@@ -4,20 +4,20 @@ import Footer from '../components/footer'
 
 export const metadata = {
   title: {
-    default: 'Goutham Prasanth Pamarthy — Security Engineer',
-    template: '%s — Goutham Prasanth Pamarthy',
+    default: 'Goutham Prasanth Pamarthy |Security Engineer',
+    template: '%s |Goutham Prasanth Pamarthy',
   },
   description: 'Security engineer specializing in penetration testing, cloud security, and incident response. OSEP and CRTE certified.',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     siteName: 'Goutham Prasanth Pamarthy',
-    title: 'Goutham Prasanth Pamarthy — Security Engineer',
+    title: 'Goutham Prasanth Pamarthy |Security Engineer',
     description: 'OSEP & CRTE certified security engineer. Penetration testing, cloud security, AV/EDR evasion, incident response. Builder of Domino and MalForge.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Goutham Prasanth Pamarthy — Security Engineer',
+    title: 'Goutham Prasanth Pamarthy |Security Engineer',
     description: 'OSEP & CRTE certified. Pentesting, cloud security, and offensive tool development.',
   },
   metadataBase: new URL('https://gpamarthy.github.io'),

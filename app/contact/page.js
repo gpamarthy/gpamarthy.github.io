@@ -7,7 +7,7 @@ export default function Contact() {
     <div className="wrap pt-24 pb-20 md:pt-32">
       <h1 className="h-lg max-w-lg">Let&rsquo;s talk.</h1>
       <p className="text-muted text-sm mt-3 max-w-lg">
-        Currently looking for security engineering roles — remote or on-site.
+        Currently looking for security engineering roles -remote or on-site.
         Email is fastest.
       </p>
 

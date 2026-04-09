@@ -15,7 +15,7 @@ export default function Experience() {
               <h2 className="h-md text-lg">Head of Security Engineering</h2>
               <p className="text-muted text-sm mt-1">SportsExcitement &middot; Remote</p>
             </div>
-            <p className="text-subtle text-sm font-mono shrink-0">Nov 2025 &mdash; Present</p>
+            <p className="text-subtle text-sm font-mono shrink-0">Nov 2025 - Present</p>
           </div>
 
           <div className="grid grid-cols-3 gap-4 mb-8 max-w-md">
@@ -36,7 +36,7 @@ export default function Experience() {
           <ul className="space-y-3 text-zinc-300 text-sm leading-relaxed max-w-2xl">
             <li className="dash">
               Conducted 20+ web app and API penetration tests. Every engagement started with
-              mapping the attack surface manually before running tools — uncovered IDOR, stored XSS,
+              mapping the attack surface manually before running tools, which uncovered IDOR, stored XSS,
               and auth bypass issues that automated scanners missed.
             </li>
             <li className="dash">
@@ -45,7 +45,7 @@ export default function Experience() {
             </li>
             <li className="dash">Cloudflare WAF with custom rules for scraping and DDoS patterns. Rate-limiting and Access for internal tooling.</li>
             <li className="dash">
-              Responded to a live cryptojacking and data exfiltration attempt — traced it through
+              Responded to a live cryptojacking and data exfiltration attempt. Traced it through
               process trees, cron persistence, and outbound C2 traffic. Evicted the loader, closed
               the vector, built Splunk detections so the same technique wouldn&rsquo;t land again.
             </li>
@@ -63,12 +63,12 @@ export default function Experience() {
               <h2 className="h-md text-lg">Graduate Teaching Assistant</h2>
               <p className="text-muted text-sm mt-1">University of Maryland, College Park</p>
             </div>
-            <p className="text-subtle text-sm font-mono shrink-0">Aug 2024 &mdash; Jan 2025</p>
+            <p className="text-subtle text-sm font-mono shrink-0">Aug 2024 - Jan 2025</p>
           </div>
 
           <ul className="space-y-3 text-zinc-300 text-sm leading-relaxed max-w-2xl">
             <li className="dash">
-              Weekly DFIR labs for 60+ grad students — Splunk log analysis, Volatility memory forensics,
+              Weekly DFIR labs for 60+ grad students: Splunk log analysis, Volatility memory forensics,
               full-chain compromise reconstructions.
             </li>
             <li className="dash">
@@ -85,7 +85,7 @@ export default function Experience() {
               <h2 className="h-md text-lg">Security Engineer</h2>
               <p className="text-muted text-sm mt-1">Phoenix Global &middot; Hyderabad, India</p>
             </div>
-            <p className="text-subtle text-sm font-mono shrink-0">Jun 2022 &mdash; Aug 2022</p>
+            <p className="text-subtle text-sm font-mono shrink-0">Jun 2022 - Aug 2022</p>
           </div>
 
           <ul className="space-y-3 text-zinc-300 text-sm leading-relaxed max-w-2xl">
@@ -95,7 +95,7 @@ export default function Experience() {
               triage automation saved the SOC ~15 hours/week.
             </li>
             <li className="dash">
-              IAM audit across 50+ AWS assets — overprivileged roles, dormant keys, CloudTrail gaps.
+              IAM audit across 50+ AWS assets: overprivileged roles, dormant keys, CloudTrail gaps.
               Co-authored the remediation guide, 35% cloud risk reduction.
             </li>
           </ul>

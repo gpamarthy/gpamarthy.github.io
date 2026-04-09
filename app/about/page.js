@@ -56,7 +56,7 @@ function Lock() {
 
 const certs = [
   { name: 'OSEP', note: '48-hour proctored attack lab. Not multiple choice.', Icon: Target, top: true },
-  { name: 'CRTE', note: 'AD exploitation and lateral movement — live lab.', Icon: Key, top: true },
+  { name: 'CRTE', note: 'AD exploitation and lateral movement, live lab.', Icon: Key, top: true },
   { name: 'AWS Security Specialty', note: 'Cloud IR, infrastructure protection, IAM.', Icon: Cloud },
   { name: 'CompTIA Security+', note: 'Security foundations.', Icon: Shield },
   { name: 'CCNA', note: 'Routing, switching, network infra.', Icon: Router },
@@ -82,7 +82,7 @@ export default function About() {
         </p>
         <p>
           My approach: map the attack surface manually first, then run tools. The interesting
-          vulnerabilities — the ones that chain into actual compromise — live in the gaps
+          vulnerabilities, the ones that chain into actual compromise, live in the gaps
           between what scanners check.
         </p>
       </div>
@@ -107,28 +107,28 @@ export default function About() {
 
       <hr className="rule" />
 
-      {/* Education — no cards, just text */}
+      {/* Education.no cards, just text */}
       <section>
         <p className="label">Education</p>
         <div className="space-y-4 max-w-lg">
           <div>
             <h3 className="h-md text-base">M.Eng. in Cybersecurity</h3>
-            <p className="text-muted text-sm">University of Maryland, College Park &mdash; May 2025</p>
+            <p className="text-muted text-sm">University of Maryland, College Park - May 2025</p>
           </div>
           <div>
             <h3 className="h-md text-base">B.Tech. in Computer Science</h3>
-            <p className="text-muted text-sm">GITAM, India &mdash; Apr 2023</p>
+            <p className="text-muted text-sm">GITAM, India - Apr 2023</p>
           </div>
         </div>
       </section>
 
       <hr className="rule" />
 
-      {/* Skills — intentionally asymmetric */}
+      {/* Skills.intentionally asymmetric */}
       <section>
         <p className="label">Technical Skills</p>
 
-        {/* Offensive gets the most space — it's the strongest area */}
+        {/* Offensive gets the most space.it's the strongest area */}
         <div className="mb-8">
           <h3 className="text-sm font-semibold mb-3">Offensive Security & Red Team</h3>
           <p className="text-zinc-400 text-sm leading-loose max-w-2xl">
