@@ -325,6 +325,13 @@ body::after {
 .page-enter > *:nth-child(3) { animation-delay: 120ms; }
 .page-enter > *:nth-child(4) { animation-delay: 180ms; }
 
+/* ufo hover bob */
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+.ufo-bob { animation: bob 3s ease-in-out infinite; }
+
 /* focus indicators */
 :focus-visible {
   outline: 2px solid rgb(var(--c-accent));

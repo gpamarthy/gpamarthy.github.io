@@ -1,22 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <style>
-    .hull { fill: #ef4444; }
-    .dome { fill: none; stroke: #ef4444; stroke-width: 2; }
-    .eye { fill: #ef4444; }
-    .beam { stroke: #ef4444; stroke-width: 1.5; stroke-linecap: round; opacity: 0.5; }
+    .s { stroke: #ef4444; fill: none; }
+    .f { fill: #ef4444; }
+    .g { fill: #ef4444; opacity: 0.15; }
+    .b { stroke: #ef4444; opacity: 0.35; }
     @media (prefers-color-scheme: light) {
-      .hull { fill: #dc2626; }
-      .dome { stroke: #dc2626; }
-      .eye { fill: #dc2626; }
-      .beam { stroke: #dc2626; }
+      .s { stroke: #dc2626; }
+      .f { fill: #dc2626; }
+      .g { fill: #dc2626; }
+      .b { stroke: #dc2626; }
     }
   </style>
-  <ellipse cx="16" cy="14" rx="12" ry="5" class="hull" opacity="0.25"/>
-  <ellipse cx="16" cy="14" rx="12" ry="5" fill="none" stroke="#ef4444" stroke-width="1.5" class="dome" style="stroke: inherit"/>
-  <path d="M10 14c0-3.5 2.5-8 6-8s6 4.5 6 8" class="dome"/>
-  <circle cx="13" cy="12" r="1.5" class="eye"/>
-  <circle cx="19" cy="12" r="1.5" class="eye"/>
-  <line x1="12" y1="19" x2="10" y2="27" class="beam"/>
-  <line x1="16" y1="19" x2="16" y2="28" class="beam"/>
-  <line x1="20" y1="19" x2="22" y2="27" class="beam"/>
+  <!-- dome -->
+  <path d="M22 30 C22 18 28 10 32 10 C36 10 42 18 42 30" class="s" stroke-width="3"/>
+  <!-- eyes -->
+  <ellipse cx="27" cy="24" rx="4" ry="4.5" class="f"/>
+  <ellipse cx="37" cy="24" rx="4" ry="4.5" class="f"/>
+  <circle cx="28.5" cy="23" r="1.8" fill="#09090b"/>
+  <circle cx="38.5" cy="23" r="1.8" fill="#09090b"/>
+  <!-- saucer -->
+  <ellipse cx="32" cy="32" rx="22" ry="7" class="g"/>
+  <ellipse cx="32" cy="32" rx="22" ry="7" class="s" stroke-width="3"/>
+  <!-- lights -->
+  <circle cx="20" cy="32" r="2.5" class="f" opacity="0.5"/>
+  <circle cx="32" cy="34" r="2.5" class="f" opacity="0.5"/>
+  <circle cx="44" cy="32" r="2.5" class="f" opacity="0.5"/>
+  <!-- beams -->
+  <line x1="26" y1="39" x2="20" y2="56" class="b" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <line x1="32" y1="39" x2="32" y2="58" class="b" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <line x1="38" y1="39" x2="44" y2="56" class="b" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <!-- antenna -->
+  <line x1="32" y1="10" x2="32" y2="4" class="s" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="32" cy="3" r="2.5" class="f"/>
 </svg>

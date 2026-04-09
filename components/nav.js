@@ -26,13 +26,28 @@ export default function Nav() {
           onClick={() => setOpen(false)}
           aria-label="Home"
         >
-          <svg width="24" height="24" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-            <ellipse cx="16" cy="14" rx="14" ry="6" fill="currentColor" opacity="0.15" stroke="currentColor" strokeWidth="1.5"/>
-            <ellipse cx="16" cy="14" rx="8" ry="3.5" fill="currentColor" opacity="0.3"/>
-            <path d="M12 20l-3 8M20 20l3 8M16 20v9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.5"/>
-            <path d="M10 14c0-4 2.5-9 6-9s6 5 6 9" stroke="currentColor" strokeWidth="1.5"/>
-            <circle cx="13" cy="12" r="1.5" fill="currentColor"/>
-            <circle cx="19" cy="12" r="1.5" fill="currentColor"/>
+          <svg width="28" height="28" viewBox="0 0 64 64" fill="none" aria-hidden="true" className="ufo-bob">
+            {/* dome */}
+            <path d="M22 30 C22 18 28 10 32 10 C36 10 42 18 42 30" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.08"/>
+            {/* big goofy eyes */}
+            <ellipse cx="27" cy="24" rx="4" ry="4.5" fill="currentColor" opacity="0.9"/>
+            <ellipse cx="37" cy="24" rx="4" ry="4.5" fill="currentColor" opacity="0.9"/>
+            <circle cx="28.5" cy="23" r="1.5" fill="rgb(var(--c-bg))"/>
+            <circle cx="38.5" cy="23" r="1.5" fill="rgb(var(--c-bg))"/>
+            {/* saucer */}
+            <ellipse cx="32" cy="32" rx="22" ry="7" fill="currentColor" opacity="0.15"/>
+            <ellipse cx="32" cy="32" rx="22" ry="7" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+            {/* saucer lights */}
+            <circle cx="20" cy="32" r="2" fill="currentColor" opacity="0.5"/>
+            <circle cx="32" cy="34" r="2" fill="currentColor" opacity="0.5"/>
+            <circle cx="44" cy="32" r="2" fill="currentColor" opacity="0.5"/>
+            {/* tractor beams */}
+            <path d="M26 39 L20 56" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.3"/>
+            <path d="M32 39 L32 58" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.3"/>
+            <path d="M38 39 L44 56" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.3"/>
+            {/* antenna */}
+            <line x1="32" y1="10" x2="32" y2="4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            <circle cx="32" cy="3" r="2" fill="currentColor"/>
           </svg>
         </Link>
 
