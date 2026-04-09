@@ -46,11 +46,12 @@ export default function Nav() {
         <div className="flex md:hidden items-center gap-3">
           <ThemeToggle />
           <button
-            className="text-muted p-1"
+            className="text-muted p-2"
             onClick={() => setOpen(!open)}
             aria-label="Menu"
+            aria-expanded={open}
           >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
               {open
                 ? <path d="M18 6L6 18M6 6l12 12" />
                 : <path d="M4 8h16M4 16h16" />
@@ -68,7 +69,7 @@ export default function Nav() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className={`text-sm font-mono ${path === l.href ? 'text-accent' : 'text-muted'}`}
+                className={`text-sm font-mono py-1 ${path === l.href ? 'text-accent' : 'text-muted'}`}
               >
                 {l.label}
               </Link>

@@ -1,5 +1,6 @@
 export const metadata = {
   title: 'Experience',
+  description: 'Work history: Head of Security Engineering at SportsExcitement, GTA at UMD, Security Engineer at Phoenix Global.',
 }
 
 export default function Experience() {
@@ -18,7 +19,7 @@ export default function Experience() {
             <p className="text-subtle text-sm font-mono shrink-0">Nov 2025 - Present</p>
           </div>
 
-          <div className="grid grid-cols-3 gap-4 mb-8 max-w-md">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8 max-w-md">
             <div className="pl-3 border-l-2 border-accent/40">
               <p className="num text-2xl">20+</p>
               <p className="num-label text-xs">Pentests run</p>

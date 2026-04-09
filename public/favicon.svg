@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    rect { fill: #09090b; }
+    text { fill: #ef4444; }
+    @media (prefers-color-scheme: light) {
+      rect { fill: #fafafa; }
+      text { fill: #dc2626; }
+    }
+  </style>
+  <rect width="32" height="32" rx="4"/>
+  <text x="16" y="22" font-family="Georgia,serif" font-size="16" font-weight="bold" font-style="italic" text-anchor="middle">GP</text>
+</svg>

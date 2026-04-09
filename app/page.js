@@ -11,7 +11,7 @@ export default function Home() {
         </h1>
         <p className="body-lg max-w-2xl mt-6">
           I find the attack paths your scanner missed. OSEP and CRTE certified.
-          both require passing live proctored attack labs, not a multiple-choice exam.
+          Both require passing live proctored attack labs, not a multiple-choice exam.
           I build offensive security tools, harden cloud infrastructure, and respond to incidents.
         </p>
         <div className="flex flex-wrap gap-4 mt-8">
@@ -60,7 +60,7 @@ export default function Home() {
                   <p className="text-muted text-sm">AWS IAM Privilege Escalation Path Prover</p>
                   <p className="text-zinc-400 mt-4 leading-relaxed text-sm">
                     Prowler tells you 200 individual misconfigs exist. Domino tells you which 5
-                    chain into actual account compromise.and shows you the exact path to get there.
+                    chain into actual account compromise, and shows you the exact path.
                   </p>
                   <div className="flex flex-wrap gap-2 mt-6">
                     <span className="chip">Python</span>

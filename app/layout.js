@@ -4,20 +4,25 @@ import Footer from '../components/footer'
 
 export const metadata = {
   title: {
-    default: 'Goutham Prasanth Pamarthy |Security Engineer',
-    template: '%s |Goutham Prasanth Pamarthy',
+    default: 'Goutham Prasanth Pamarthy | Security Engineer',
+    template: '%s | Goutham Prasanth Pamarthy',
   },
-  description: 'Security engineer specializing in penetration testing, cloud security, and incident response. OSEP and CRTE certified.',
+  description: 'Security engineer. Penetration testing, cloud security, incident response. OSEP and CRTE certified. Builder of Domino and MalForge.',
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
     siteName: 'Goutham Prasanth Pamarthy',
-    title: 'Goutham Prasanth Pamarthy |Security Engineer',
-    description: 'OSEP & CRTE certified security engineer. Penetration testing, cloud security, AV/EDR evasion, incident response. Builder of Domino and MalForge.',
+    title: 'Goutham Prasanth Pamarthy | Security Engineer',
+    description: 'OSEP & CRTE certified. Pentesting, cloud security, AV/EDR evasion, incident response. Builder of Domino and MalForge.',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Goutham Prasanth Pamarthy |Security Engineer',
+    card: 'summary',
+    title: 'Goutham Prasanth Pamarthy | Security Engineer',
     description: 'OSEP & CRTE certified. Pentesting, cloud security, and offensive tool development.',
   },
   metadataBase: new URL('https://gpamarthy.github.io'),
@@ -38,8 +43,11 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="bg-bg min-h-screen">
+        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[200] focus:bg-accent focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm">
+          Skip to content
+        </a>
         <Nav />
-        <main className="pt-16">
+        <main id="main" className="pt-16">
           {children}
         </main>
         <Footer />

@@ -2,26 +2,27 @@ import Terminal from '../../components/terminal'
 
 export const metadata = {
   title: 'Projects',
+  description: 'Domino: AWS IAM privilege escalation path prover. MalForge: multi-format payload generator with AV/EDR evasion.',
 }
 
 const dominoLines = [
   '<span class="text-zinc-500">[*]</span> Loading IAM snapshot: prod-account.json',
   '<span class="text-zinc-500">[*]</span> Building principal-resource graph: 47 nodes, 183 edges',
   '<span class="text-zinc-500">[*]</span> Running tactic matching against 12 attack patterns...',
-  '',
-  '<span class="text-red-400">Path 1</span>:Severity: <span class="text-red-400 font-bold">CRITICAL</span> (score: 9.2)',
+  '&nbsp;',
+  '<span class="text-red-400">Path 1</span> | Severity: <span class="text-red-400 font-bold">CRITICAL</span> (score: 9.2)',
   '  dev-lambda-role',
   '    <span class="text-zinc-600">→</span> iam:PassRole <span class="text-zinc-600">→</span> prod-admin-role',
   '    <span class="text-zinc-600">→</span> lambda:UpdateFunctionCode <span class="text-zinc-600">→</span> data-exfil-lambda',
   '    <span class="text-zinc-600">→</span> sts:AssumeRole <span class="text-zinc-600">→</span> prod-admin-role',
   '  Tactics: PassRole+Lambda, Lambda code hijack',
-  '',
-  '<span class="text-yellow-500">Path 2</span>:Severity: <span class="text-yellow-500 font-bold">HIGH</span> (score: 7.8)',
+  '&nbsp;',
+  '<span class="text-yellow-500">Path 2</span> | Severity: <span class="text-yellow-500 font-bold">HIGH</span> (score: 7.8)',
   '  readonly-user',
   '    <span class="text-zinc-600">→</span> iam:CreatePolicyVersion <span class="text-zinc-600">→</span> self-escalation',
   '    <span class="text-zinc-600">→</span> iam:AttachUserPolicy <span class="text-zinc-600">→</span> AdministratorAccess',
   '  Tactics: IAM self-escalation, Policy version rollback',
-  '',
+  '&nbsp;',
   '<span class="text-green-500">[+]</span> Scan complete: 2 exploitable paths found across 47 principals',
 ]
 
@@ -43,7 +44,7 @@ export default function Projects() {
       <h1 className="h-lg max-w-xl">Projects</h1>
       <p className="text-muted text-sm mt-3 max-w-lg">Tools I built to solve problems I kept running into.</p>
 
-      {/* Domino:full case study layout with sidebar */}
+      {/* Domino - full case study with sidebar */}
       <article id="domino" className="mt-16 scroll-mt-24">
         <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
           <h2 className="font-display text-3xl md:text-4xl">Domino</h2>
@@ -66,7 +67,7 @@ export default function Projects() {
               <p className="text-zinc-300 text-sm leading-relaxed">
                 Takes an IAM snapshot or pulls live credentials, models every principal and resource
                 as a networkx MultiDiGraph, then finds all paths to admin targets. Matches chains
-                against 12 built-in attack tactics:scoring each by tactic severity and hop difficulty.
+                against 12 built-in attack tactics, scoring each by tactic severity and hop difficulty.
               </p>
             </div>
             <div>
@@ -109,7 +110,7 @@ export default function Projects() {
 
       <hr className="rule my-20" />
 
-      {/* MalForge:different layout: no sidebar, full-width sections */}
+      {/* MalForge - full-width, no sidebar */}
       <article id="malforge" className="scroll-mt-24">
         <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
           <h2 className="font-display text-3xl md:text-4xl">MalForge</h2>
@@ -120,15 +121,15 @@ export default function Projects() {
         <div className="max-w-2xl mt-10 space-y-8">
           <p className="text-zinc-300 text-sm leading-relaxed">
             Takes raw shellcode or generates it via msfvenom, runs it through stackable
-            encryption layers:XOR, AES-256-CBC, RC4, Caesar in any order, auto-reversed at
-            runtime:and outputs across 9 formats. Each build produces unique artifacts.
+            encryption layers (XOR, AES-256-CBC, RC4, Caesar in any order, auto-reversed at
+            runtime) and outputs across 9 formats. Each build produces unique artifacts.
           </p>
 
           <div className="grid sm:grid-cols-2 gap-8">
             <div>
               <h3 className="h-md mb-3">Evasion stack</h3>
               <ul className="space-y-2 text-sm text-zinc-400">
-                <li className="dash">RW alloc, then RX flip:never RWX</li>
+                <li className="dash">RW alloc, then RX flip. Never RWX</li>
                 <li className="dash">Runtime AMSI and ETW patching</li>
                 <li className="dash">Sandbox detection</li>
                 <li className="dash">Namespace randomization per build</li>
@@ -139,7 +140,7 @@ export default function Projects() {
               <p className="text-xs text-subtle uppercase tracking-wider mb-1 font-mono">Stack</p>
               <p className="text-sm text-zinc-300 mb-3">Python, C#, PowerShell</p>
               <p className="text-xs text-subtle uppercase tracking-wider mb-1 font-mono">Encryption</p>
-              <p className="text-sm text-zinc-300 mb-3">XOR, AES-256-CBC, RC4, Caesar:stackable</p>
+              <p className="text-sm text-zinc-300 mb-3">XOR, AES-256-CBC, RC4, Caesar (stackable)</p>
               <a href="https://github.com/gpamarthy/malforge" target="_blank" rel="noreferrer" className="arrow block pt-1">
                 View on GitHub
               </a>

@@ -6,9 +6,9 @@ export default function Footer() {
           Goutham Prasanth Pamarthy
         </p>
         <div className="flex gap-6 text-sm text-muted">
-          <a href="https://www.linkedin.com/in/gpamarthy7" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
-          <a href="https://github.com/gpamarthy" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub</a>
-          <a href="mailto:gppamarthy@gmail.com" className="hover:text-white transition-colors">Email</a>
+          <a href="https://www.linkedin.com/in/gpamarthy7" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">LinkedIn</a>
+          <a href="https://github.com/gpamarthy" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">GitHub</a>
+          <a href="mailto:gppamarthy@gmail.com" className="hover:text-accent transition-colors">Email</a>
         </div>
       </div>
     </footer>

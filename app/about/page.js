@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 export const metadata = {
   title: 'About',
+  description: 'OSEP, CRTE, AWS Security Specialty certified. M.Eng Cybersecurity from UMD. Red team, cloud security, DFIR.',
 }
 
 function Target() {
