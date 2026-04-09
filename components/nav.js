@@ -22,10 +22,18 @@ export default function Nav() {
       <div className="wrap flex items-center justify-between h-16">
         <Link
           href="/"
-          className="font-display italic text-xl tracking-tight hover:text-accent transition-colors cursor"
+          className="hover:text-accent transition-colors flex items-center gap-1.5"
           onClick={() => setOpen(false)}
+          aria-label="Home"
         >
-          GP
+          <svg width="24" height="24" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <ellipse cx="16" cy="14" rx="14" ry="6" fill="currentColor" opacity="0.15" stroke="currentColor" strokeWidth="1.5"/>
+            <ellipse cx="16" cy="14" rx="8" ry="3.5" fill="currentColor" opacity="0.3"/>
+            <path d="M12 20l-3 8M20 20l3 8M16 20v9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.5"/>
+            <path d="M10 14c0-4 2.5-9 6-9s6 5 6 9" stroke="currentColor" strokeWidth="1.5"/>
+            <circle cx="13" cy="12" r="1.5" fill="currentColor"/>
+            <circle cx="19" cy="12" r="1.5" fill="currentColor"/>
+          </svg>
         </Link>
 
         <div className="hidden md:flex items-center gap-7">
