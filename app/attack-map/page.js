@@ -1,0 +1,201 @@
+'use client'
+
+import { useState } from 'react'
+
+const tactics = [
+  {
+    name: 'Reconnaissance',
+    id: 'TA0043',
+    techniques: [
+      { id: 'T1595', name: 'Active Scanning', evidence: 'Nmap, Nessus, Nikto' },
+      { id: 'T1589', name: 'Gather Victim Identity Info', evidence: 'OSINT, LinkedIn recon, email harvesting' },
+    ],
+  },
+  {
+    name: 'Initial Access',
+    id: 'TA0001',
+    techniques: [
+      { id: 'T1566', name: 'Phishing', evidence: 'OSEP — macro payloads, HTA delivery' },
+      { id: 'T1190', name: 'Exploit Public-Facing Application', evidence: '20+ web app/API pentests — IDOR, XSS, auth bypass' },
+    ],
+  },
+  {
+    name: 'Execution',
+    id: 'TA0002',
+    techniques: [
+      { id: 'T1059.001', name: 'PowerShell', evidence: 'MalForge output, OSEP, post-exploitation' },
+      { id: 'T1059.003', name: 'Windows Command Shell', evidence: 'Payload execution, lateral movement' },
+      { id: 'T1047', name: 'WMI', evidence: 'OSEP — lateral movement via DCOM/WMI' },
+      { id: 'T1204', name: 'User Execution', evidence: 'Phishing payload delivery chains' },
+    ],
+  },
+  {
+    name: 'Persistence',
+    id: 'TA0003',
+    techniques: [
+      { id: 'T1053', name: 'Scheduled Task/Job', evidence: 'Cryptojacking IR — attacker used cron persistence' },
+      { id: 'T1078', name: 'Valid Accounts', evidence: 'IAM abuse, AD credential compromise' },
+      { id: 'T1547', name: 'Boot/Logon Autostart', evidence: 'OSEP persistence mechanisms' },
+    ],
+  },
+  {
+    name: 'Privilege Escalation',
+    id: 'TA0004',
+    techniques: [
+      { id: 'T1134', name: 'Access Token Manipulation', evidence: 'OSEP — token impersonation' },
+      { id: 'T1068', name: 'Exploitation for Privilege Escalation', evidence: 'Web app and infra pentests' },
+      { id: 'T1558', name: 'Steal/Forge Kerberos Tickets', evidence: 'CRTE — Kerberoasting, Golden/Silver Ticket' },
+      { id: 'T1484', name: 'Domain Policy Modification', evidence: 'CRTE — ADCS abuse (ESC1-8)' },
+    ],
+  },
+  {
+    name: 'Defense Evasion',
+    id: 'TA0005',
+    techniques: [
+      { id: 'T1562', name: 'Impair Defenses', evidence: 'MalForge — AMSI/ETW patching at runtime' },
+      { id: 'T1055', name: 'Process Injection', evidence: 'MalForge — process hollowing, OSEP injection variants' },
+      { id: 'T1027', name: 'Obfuscated Files/Information', evidence: 'MalForge — stackable XOR/AES/RC4/Caesar encryption' },
+      { id: 'T1036', name: 'Masquerading', evidence: 'Namespace/class randomization per build' },
+      { id: 'T1218', name: 'System Binary Proxy Execution', evidence: 'MalForge — MSBuild, InstallUtil, rundll32, regsvr32' },
+      { id: 'T1070', name: 'Indicator Removal', evidence: 'Log cleanup, anti-forensics awareness' },
+    ],
+  },
+  {
+    name: 'Credential Access',
+    id: 'TA0006',
+    techniques: [
+      { id: 'T1003', name: 'OS Credential Dumping', evidence: 'Mimikatz, Impacket secretsdump, DCSync' },
+      { id: 'T1558', name: 'Steal/Forge Kerberos Tickets', evidence: 'CRTE — Kerberoasting, AS-REP, delegation abuse' },
+      { id: 'T1552', name: 'Unsecured Credentials', evidence: 'AWS IAM key auditing, LAPS, GPP passwords' },
+      { id: 'T1649', name: 'Steal/Forge Auth Certificates', evidence: 'CRTE — Certipy, ADCS ESC1-8' },
+    ],
+  },
+  {
+    name: 'Discovery',
+    id: 'TA0007',
+    techniques: [
+      { id: 'T1087', name: 'Account Discovery', evidence: 'BloodHound/SharpHound, AD enumeration' },
+      { id: 'T1482', name: 'Domain Trust Discovery', evidence: 'CRTE — cross-forest trust mapping' },
+      { id: 'T1046', name: 'Network Service Discovery', evidence: 'Nmap, service enumeration' },
+      { id: 'T1069', name: 'Permission Groups Discovery', evidence: 'BloodHound, PowerView, IAM policy analysis' },
+    ],
+  },
+  {
+    name: 'Lateral Movement',
+    id: 'TA0008',
+    techniques: [
+      { id: 'T1021', name: 'Remote Services', evidence: 'WinRM, PsExec, Evil-WinRM, RDP, SSH' },
+      { id: 'T1550', name: 'Use Alternate Auth Material', evidence: 'Pass-the-Hash, Pass-the-Ticket, RBCD' },
+      { id: 'T1570', name: 'Lateral Tool Transfer', evidence: 'Payload staging, C2 beacon deployment' },
+    ],
+  },
+  {
+    name: 'Command & Control',
+    id: 'TA0011',
+    techniques: [
+      { id: 'T1071', name: 'Application Layer Protocol', evidence: 'Cobalt Strike, Sliver — HTTP/S, DNS' },
+      { id: 'T1572', name: 'Protocol Tunneling', evidence: 'Ligolo-ng, Chisel, SSH dynamic forwarding' },
+      { id: 'T1573', name: 'Encrypted Channel', evidence: 'C2 encrypted comms, TLS implants' },
+    ],
+  },
+  {
+    name: 'Exfiltration',
+    id: 'TA0010',
+    techniques: [
+      { id: 'T1041', name: 'Exfiltration Over C2', evidence: 'Standard C2 data exfiltration' },
+      { id: 'T1567', name: 'Exfiltration Over Web Service', evidence: 'Cloud exfiltration paths (S3, Lambda)' },
+    ],
+  },
+  {
+    name: 'Impact',
+    id: 'TA0040',
+    techniques: [
+      { id: 'T1496', name: 'Resource Hijacking', evidence: 'Responded to live cryptojacking attack' },
+    ],
+  },
+]
+
+function heat(count) {
+  if (count >= 5) return 'bg-accent/25 border-accent/40'
+  if (count >= 3) return 'bg-accent/15 border-accent/30'
+  return 'bg-accent/8 border-accent/20'
+}
+
+export default function AttackMap() {
+  const [expanded, setExpanded] = useState(null)
+  const total = tactics.reduce((s, t) => s + t.techniques.length, 0)
+
+  return (
+    <div className="wrap pt-24 pb-20 md:pt-32">
+      <p className="label">MITRE ATT&CK Coverage</p>
+      <h1 className="h-lg max-w-xl">Techniques I&rsquo;ve used hands-on.</h1>
+      <p className="text-muted text-sm mt-4 max-w-xl">
+        {total} techniques across {tactics.length} tactics — mapped from pentests,
+        red team engagements, tool development, incident response, and OSEP/CRTE lab work.
+        Click a tactic to see specifics.
+      </p>
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-12">
+        {tactics.map(tactic => {
+          const open = expanded === tactic.id
+          return (
+            <div key={tactic.id}>
+              <button
+                onClick={() => setExpanded(open ? null : tactic.id)}
+                className={`w-full text-left p-4 rounded border transition-all ${heat(tactic.techniques.length)} ${
+                  open ? 'ring-1 ring-accent/50' : ''
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="font-mono text-xs text-muted">{tactic.id}</p>
+                    <h3 className="font-semibold text-sm mt-0.5">{tactic.name}</h3>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="font-mono text-xs text-accent font-bold">{tactic.techniques.length}</span>
+                    <svg
+                      width="14" height="14" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" strokeWidth="2"
+                      className={`text-muted transition-transform ${open ? 'rotate-180' : ''}`}
+                    >
+                      <path d="M6 9l6 6 6-6" />
+                    </svg>
+                  </div>
+                </div>
+              </button>
+              {open && (
+                <div className="mt-1 p-4 surface rounded space-y-3">
+                  {tactic.techniques.map(tech => (
+                    <div key={tech.id} className="text-sm">
+                      <div className="flex items-baseline gap-2">
+                        <span className="font-mono text-xs text-accent shrink-0">{tech.id}</span>
+                        <span className="font-medium text-[rgb(var(--c-text))]">{tech.name}</span>
+                      </div>
+                      <p className="text-muted text-xs mt-1 ml-[3.5rem]">{tech.evidence}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )
+        })}
+      </div>
+
+      <div className="mt-12 surface p-6 flex flex-wrap gap-8 text-xs">
+        <div className="flex items-center gap-2">
+          <span className="w-4 h-4 rounded bg-accent/8 border border-accent/20"></span>
+          <span className="text-muted">1-2 techniques</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="w-4 h-4 rounded bg-accent/15 border border-accent/30"></span>
+          <span className="text-muted">3-4 techniques</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="w-4 h-4 rounded bg-accent/25 border border-accent/40"></span>
+          <span className="text-muted">5+ techniques</span>
+        </div>
+        <span className="text-subtle ml-auto">Based on MITRE ATT&CK v15</span>
+      </div>
+    </div>
+  )
+}
