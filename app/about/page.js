@@ -7,7 +7,7 @@ export const metadata = {
 
 function Target() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><circle cx="12" cy="12" r="1" fill="currentColor" />
       <line x1="12" y1="1" x2="12" y2="5" /><line x1="12" y1="19" x2="12" y2="23" />
       <line x1="1" y1="12" x2="5" y2="12" /><line x1="19" y1="12" x2="23" y2="12" />
@@ -16,7 +16,7 @@ function Target() {
 }
 function Key() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <circle cx="8" cy="10" r="5" /><circle cx="8" cy="10" r="1.5" fill="currentColor" />
       <path d="M13 10h9M18 10v4M22 10v4" />
     </svg>
@@ -24,7 +24,7 @@ function Key() {
 }
 function Cloud() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <path d="M6 19a4 4 0 0 1-.98-7.88A5.5 5.5 0 0 1 16.5 8h.5a5 5 0 0 1 1 9.9" />
       <rect x="9" y="13" width="6" height="7" rx="1" /><path d="M12 15v3" />
     </svg>
@@ -32,7 +32,7 @@ function Cloud() {
 }
 function Shield() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <path d="M12 2l8 4v6c0 5.25-3.5 8.75-8 10-4.5-1.25-8-4.75-8-10V6l8-4z" />
       <path d="M9 12h6M12 9v6" />
     </svg>
@@ -40,7 +40,7 @@ function Shield() {
 }
 function Router() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <circle cx="6" cy="18" r="2" /><circle cx="18" cy="18" r="2" /><circle cx="12" cy="6" r="2" />
       <path d="M12 8v4M8 16l3-4M16 16l-3-4" />
     </svg>
@@ -48,7 +48,7 @@ function Router() {
 }
 function Lock() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" />
       <circle cx="12" cy="16" r="1" fill="currentColor" />
     </svg>

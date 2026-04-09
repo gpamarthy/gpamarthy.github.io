@@ -76,9 +76,16 @@ export default function Home() {
           {/* MalForge.compact inline, different layout */}
           <Link href="/projects#malforge" className="block group">
             <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 py-6 px-2 border-b border-surface-bright/50 hover:border-accent/20 transition-colors">
-              <div className="md:w-48 shrink-0">
-                <h3 className="h-md">MalForge</h3>
-                <p className="text-muted text-xs mt-0.5">2025</p>
+              <div className="md:w-48 shrink-0 flex items-center gap-3">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-accent shrink-0">
+                  <path d="M12 2v4M4 10l2.5 2M19.5 10L17 12"/>
+                  <rect x="6" y="10" width="12" height="10" rx="2"/>
+                  <path d="M10 15h4"/>
+                </svg>
+                <div>
+                  <h3 className="h-md">MalForge</h3>
+                  <p className="text-muted text-xs mt-0.5">2025</p>
+                </div>
               </div>
               <p className="text-zinc-400 text-sm flex-1">
                 Multi-format payload generator with AV/EDR evasion.

@@ -51,8 +51,8 @@
     background-color: rgb(var(--c-bg));
     color: rgb(var(--c-text));
     line-height: 1.6;
-    background-image: radial-gradient(rgb(var(--c-accent) / 0.05) 1px, transparent 1px);
-    background-size: 32px 32px;
+    background-image: radial-gradient(rgb(var(--c-accent) / 0.08) 1px, transparent 1px);
+    background-size: 28px 28px;
   }
 
   ::selection {
@@ -73,13 +73,13 @@ body::after {
   inset: 0;
   pointer-events: none;
   z-index: 100;
-  opacity: 0.4;
+  opacity: 0.5;
   background: repeating-linear-gradient(
     0deg,
     transparent,
-    transparent 3px,
-    rgba(0, 0, 0, 0.03) 3px,
-    rgba(0, 0, 0, 0.03) 4px
+    transparent 2px,
+    rgba(0, 0, 0, 0.04) 2px,
+    rgba(0, 0, 0, 0.04) 3px
   );
 }
 
@@ -209,6 +209,7 @@ body::after {
   .chip:hover {
     border-color: rgb(var(--c-accent));
     color: rgb(var(--c-accent));
+    background: rgb(var(--c-accent) / 0.08);
   }
 
   .num {
@@ -249,6 +250,7 @@ body::after {
   .surface:hover {
     border-color: rgb(var(--c-accent) / 0.3);
     box-shadow: 0 0 40px rgb(var(--c-accent) / 0.06), 0 0 80px rgb(var(--c-accent) / 0.03);
+    transform: translateY(-1px);
   }
 
   .surface-hl {
@@ -285,19 +287,6 @@ body::after {
     border-radius: 0.25rem 0 0 0.25rem;
   }
 
-  /* blinking cursor */
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
-
-  .cursor::after {
-    content: '_';
-    color: rgb(var(--c-accent));
-    animation: blink 1s step-end infinite;
-    font-weight: 400;
-  }
-
   /* cert icon wrapper */
   .cert-icon {
     width: 2.5rem;
@@ -312,25 +301,6 @@ body::after {
     flex-shrink: 0;
   }
 }
-
-/* page entry */
-@keyframes enter {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.page-enter { animation: enter 0.5s ease both; }
-.page-enter > *:nth-child(1) { animation-delay: 0ms; }
-.page-enter > *:nth-child(2) { animation-delay: 60ms; }
-.page-enter > *:nth-child(3) { animation-delay: 120ms; }
-.page-enter > *:nth-child(4) { animation-delay: 180ms; }
-
-/* ufo hover bob */
-@keyframes bob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
-}
-.ufo-bob { animation: bob 3s ease-in-out infinite; }
 
 /* focus indicators */
 :focus-visible {

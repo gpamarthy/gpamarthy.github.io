@@ -13,6 +13,22 @@ const links = [
   { href: '/contact', label: 'Contact' },
 ]
 
+function Ufo({ size = 26 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 64 52" fill="none" aria-hidden="true">
+      <g transform="rotate(-12, 32, 28)">
+        <ellipse cx="32" cy="14" rx="11" ry="10" fill="currentColor"/>
+        <ellipse cx="32" cy="28" rx="27" ry="8" fill="currentColor"/>
+        <path d="M12 26 Q32 20 52 26" stroke="rgb(var(--c-bg))" strokeWidth="2.5" fill="none"/>
+        <circle cx="19" cy="28" r="3" fill="rgb(var(--c-bg))"/>
+        <circle cx="45" cy="28" r="3" fill="rgb(var(--c-bg))"/>
+      </g>
+    </svg>
+  )
+}
+
+export { Ufo }
+
 export default function Nav() {
   const path = usePathname()
   const [open, setOpen] = useState(false)
@@ -22,33 +38,11 @@ export default function Nav() {
       <div className="wrap flex items-center justify-between h-16">
         <Link
           href="/"
-          className="hover:text-accent transition-colors flex items-center gap-1.5"
+          className="hover:text-accent transition-colors"
           onClick={() => setOpen(false)}
           aria-label="Home"
         >
-          <svg width="28" height="28" viewBox="0 0 64 64" fill="none" aria-hidden="true" className="ufo-bob">
-            {/* dome */}
-            <path d="M22 30 C22 18 28 10 32 10 C36 10 42 18 42 30" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.08"/>
-            {/* big goofy eyes */}
-            <ellipse cx="27" cy="24" rx="4" ry="4.5" fill="currentColor" opacity="0.9"/>
-            <ellipse cx="37" cy="24" rx="4" ry="4.5" fill="currentColor" opacity="0.9"/>
-            <circle cx="28.5" cy="23" r="1.5" fill="rgb(var(--c-bg))"/>
-            <circle cx="38.5" cy="23" r="1.5" fill="rgb(var(--c-bg))"/>
-            {/* saucer */}
-            <ellipse cx="32" cy="32" rx="22" ry="7" fill="currentColor" opacity="0.15"/>
-            <ellipse cx="32" cy="32" rx="22" ry="7" stroke="currentColor" strokeWidth="2.5" fill="none"/>
-            {/* saucer lights */}
-            <circle cx="20" cy="32" r="2" fill="currentColor" opacity="0.5"/>
-            <circle cx="32" cy="34" r="2" fill="currentColor" opacity="0.5"/>
-            <circle cx="44" cy="32" r="2" fill="currentColor" opacity="0.5"/>
-            {/* tractor beams */}
-            <path d="M26 39 L20 56" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.3"/>
-            <path d="M32 39 L32 58" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.3"/>
-            <path d="M38 39 L44 56" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.3"/>
-            {/* antenna */}
-            <line x1="32" y1="10" x2="32" y2="4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-            <circle cx="32" cy="3" r="2" fill="currentColor"/>
-          </svg>
+          <Ufo />
         </Link>
 
         <div className="hidden md:flex items-center gap-7">
