@@ -51,11 +51,11 @@ export default function Home() {
         </h2>
 
         <div className="mt-16 space-y-6">
+          {/* Domino — full card */}
           <Link href="/projects#domino" className="block group">
             <article className="surface p-8 md:p-12 border-l-2 border-l-accent/50">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
                 <div className="max-w-xl">
-                  <p className="text-sm text-accent font-mono mb-2">01</p>
                   <h3 className="h-md text-xl mb-1">Domino</h3>
                   <p className="text-muted text-sm">AWS IAM Privilege Escalation Path Prover</p>
                   <p className="text-zinc-400 mt-4 leading-relaxed text-sm">
@@ -66,7 +66,6 @@ export default function Home() {
                     <span className="chip">Python</span>
                     <span className="chip">networkx</span>
                     <span className="chip">boto3</span>
-                    <span className="chip">IAM</span>
                   </div>
                 </div>
                 <span className="arrow shrink-0 mt-2">Read more</span>
@@ -74,95 +73,32 @@ export default function Home() {
             </article>
           </Link>
 
+          {/* MalForge — compact inline, different layout */}
           <Link href="/projects#malforge" className="block group">
-            <article className="surface p-8 md:p-12 border-l-2 border-l-accent/50">
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-                <div className="max-w-xl">
-                  <p className="text-sm text-accent font-mono mb-2">02</p>
-                  <h3 className="h-md text-xl mb-1">MalForge</h3>
-                  <p className="text-muted text-sm">Multi-Format Payload Generator with AV/EDR Evasion</p>
-                  <p className="text-zinc-400 mt-4 leading-relaxed text-sm">
-                    9 output formats, stackable encryption, AMSI and ETW patching, sandbox detection.
-                    Every build produces unique artifacts.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mt-6">
-                    <span className="chip">Python</span>
-                    <span className="chip">C#</span>
-                    <span className="chip">PowerShell</span>
-                    <span className="chip">msfvenom</span>
-                  </div>
-                </div>
-                <span className="arrow shrink-0 mt-2">Read more</span>
+            <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 py-6 px-2 border-b border-surface-bright/50 hover:border-accent/20 transition-colors">
+              <div className="md:w-48 shrink-0">
+                <h3 className="h-md">MalForge</h3>
+                <p className="text-muted text-xs mt-0.5">2025</p>
               </div>
-            </article>
+              <p className="text-zinc-400 text-sm flex-1">
+                Multi-format payload generator with AV/EDR evasion.
+                9 output formats, stackable encryption, AMSI/ETW patching. Every build is unique.
+              </p>
+              <span className="arrow shrink-0">Details</span>
+            </div>
           </Link>
-        </div>
-      </section>
-
-      {/* capabilities */}
-      <section className="border-t border-surface-bright/50">
-        <div className="wrap py-20 md:py-28">
-          <p className="label">What I Bring</p>
-          <div className="grid md:grid-cols-3 gap-8 mt-8">
-            <div className="surface p-6">
-              <div className="w-8 h-8 rounded bg-accent/10 border border-accent/20 flex items-center justify-center mb-4">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="1.5">
-                  <circle cx="12" cy="12" r="9" />
-                  <circle cx="12" cy="12" r="5" />
-                  <circle cx="12" cy="12" r="1" fill="#ef4444" />
-                  <line x1="12" y1="1" x2="12" y2="5" /><line x1="12" y1="19" x2="12" y2="23" />
-                  <line x1="1" y1="12" x2="5" y2="12" /><line x1="19" y1="12" x2="23" y2="12" />
-                </svg>
-              </div>
-              <h3 className="h-md mb-3">Offensive Security</h3>
-              <p className="text-muted leading-relaxed text-sm">
-                Pentesting, AV/EDR evasion, Active Directory exploitation, C2 frameworks,
-                payload development. I start with manual recon before running tools —
-                the interesting vulnerabilities are in the gaps between scanner checks.
-              </p>
-            </div>
-            <div className="surface p-6">
-              <div className="w-8 h-8 rounded bg-accent/10 border border-accent/20 flex items-center justify-center mb-4">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="1.5">
-                  <path d="M4 20V10a8 8 0 1 1 16 0v10" />
-                  <path d="M2 20h20" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-              </div>
-              <h3 className="h-md mb-3">Cloud & Infrastructure</h3>
-              <p className="text-muted leading-relaxed text-sm">
-                AWS IAM hardening, VPC segmentation, WAF configuration, GuardDuty, CloudTrail.
-                I&rsquo;ve audited 50+ AWS assets and built tools that find the escalation paths
-                scanners miss.
-              </p>
-            </div>
-            <div className="surface p-6">
-              <div className="w-8 h-8 rounded bg-accent/10 border border-accent/20 flex items-center justify-center mb-4">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ef4444" strokeWidth="1.5">
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
-                  <path d="M7 8h10M7 12h6M7 16h8" />
-                </svg>
-              </div>
-              <h3 className="h-md mb-3">Detection & Response</h3>
-              <p className="text-muted leading-relaxed text-sm">
-                Splunk and ELK correlation rules, memory forensics with Volatility, threat hunting,
-                incident response. I&rsquo;ve handled a live cryptojacking incident from detection
-                through eviction.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* cta */}
       <section className="border-t border-surface-bright/50">
-        <div className="wrap py-20 md:py-28 text-center">
+        <div className="wrap py-20 md:py-28 max-w-xl">
           <h2 className="h-lg">Let&rsquo;s work together.</h2>
-          <p className="body-lg mt-4 max-w-lg mx-auto">
-            I&rsquo;m looking for security engineering roles where I can break things,
-            build defenses, and ship tools.
+          <p className="text-muted mt-4">
+            Looking for security engineering roles where I can break things,
+            build defenses, and ship tools. Remote or on-site.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 mt-8">
+          <div className="flex flex-wrap gap-4 mt-8">
             <Link href="/contact" className="btn-fill">Get in touch</Link>
             <a href={`${process.env.BASE_PATH || ''}/resume.pdf`} download className="btn-line">Download resume</a>
           </div>

@@ -5,10 +5,9 @@ export const metadata = {
 export default function Experience() {
   return (
     <div className="wrap pt-24 pb-20 md:pt-32">
-      <p className="label">Experience</p>
-      <h1 className="h-lg max-w-xl">Where I&rsquo;ve worked and what I shipped.</h1>
+      <h1 className="h-lg max-w-xl">Experience</h1>
 
-      <div className="mt-16">
+      <div className="mt-12">
         {/* SportsExcitement */}
         <article className="py-12 first:pt-0 border-b border-surface-bright/50">
           <div className="flex flex-col md:flex-row md:justify-between md:items-baseline gap-2 mb-6">
@@ -41,24 +40,18 @@ export default function Experience() {
               and auth bypass issues that automated scanners missed.
             </li>
             <li className="dash">
-              Secured VPS infrastructure from scratch: rewrote firewall rules in IONOS Cloud Panel,
-              configured NAT Gateway for outbound-only VM exposure, enforced SSH key auth, closed
-              unused ports, set up patching cadence.
+              VPS infrastructure hardening from scratch: IONOS Cloud Panel firewall rewrites,
+              NAT Gateway for outbound-only VM exposure, SSH key auth, port lockdown, patching cadence.
+            </li>
+            <li className="dash">Cloudflare WAF with custom rules for scraping and DDoS patterns. Rate-limiting and Access for internal tooling.</li>
+            <li className="dash">
+              Responded to a live cryptojacking and data exfiltration attempt — traced it through
+              process trees, cron persistence, and outbound C2 traffic. Evicted the loader, closed
+              the vector, built Splunk detections so the same technique wouldn&rsquo;t land again.
             </li>
             <li className="dash">
-              Set up Cloudflare WAF with custom firewall rules targeting active scraping and DDoS
-              patterns. Configured rate-limiting and Cloudflare Access to lock internal tooling
-              behind identity verification.
-            </li>
-            <li className="dash">
-              Responded to a live cryptojacking and data exfiltration attempt — traced the attack
-              through process trees, cron persistence, and outbound C2 traffic. Evicted the loader,
-              closed the initial access vector, built Splunk detections to prevent recurrence.
-            </li>
-            <li className="dash">
-              Ran quarterly attack surface reviews with the CTO, translated technical findings into
-              business risk. Co-designed network segmentation changes that cut overall exposure by 30%.
-              Authored the company&rsquo;s first incident response playbook.
+              Quarterly attack surface reviews with the CTO. Translated findings into business risk,
+              co-designed segmentation changes that cut exposure by 30%. Wrote the company&rsquo;s first IR playbook.
             </li>
           </ul>
         </article>
@@ -75,12 +68,12 @@ export default function Experience() {
 
           <ul className="space-y-3 text-zinc-300 text-sm leading-relaxed max-w-2xl">
             <li className="dash">
-              Ran DFIR labs weekly for 60+ graduate students covering Splunk log analysis,
-              Volatility memory forensics, and full-chain compromise reconstructions.
+              Weekly DFIR labs for 60+ grad students — Splunk log analysis, Volatility memory forensics,
+              full-chain compromise reconstructions.
             </li>
             <li className="dash">
-              Built Python scripts that auto-generated realistic artifact sets for investigations,
-              so students worked on varied evidence rather than the same canned scenario each week.
+              Built Python scripts that auto-generated realistic artifact sets so students
+              got varied evidence each week instead of the same canned scenario.
             </li>
           </ul>
         </article>
@@ -95,31 +88,15 @@ export default function Experience() {
             <p className="text-subtle text-sm font-mono shrink-0">Jun 2022 &mdash; Aug 2022</p>
           </div>
 
-          <div className="grid grid-cols-3 gap-4 mb-8 max-w-md">
-            <div className="pl-3 border-l-2 border-accent/40">
-              <p className="num text-2xl">25+</p>
-              <p className="num-label text-xs">Splunk rules</p>
-            </div>
-            <div className="pl-3 border-l-2 border-accent/40">
-              <p className="num text-2xl">30%</p>
-              <p className="num-label text-xs">FP reduction</p>
-            </div>
-            <div className="pl-3 border-l-2 border-accent/40">
-              <p className="num text-2xl">15h</p>
-              <p className="num-label text-xs">Saved weekly</p>
-            </div>
-          </div>
-
           <ul className="space-y-3 text-zinc-300 text-sm leading-relaxed max-w-2xl">
             <li className="dash">
-              Built 25+ Splunk correlation rules by starting with raw log data, identifying actual
-              noise sources, then writing rules around real attacker behavior — false positives
-              dropped 30% and Python triage automation saved the SOC around 15 hours per week.
+              25+ Splunk correlation rules. Started from raw log data, found the actual noise sources,
+              wrote rules around real attacker behavior. False positives dropped 30%, Python
+              triage automation saved the SOC ~15 hours/week.
             </li>
             <li className="dash">
-              Audited IAM policies and security configurations across 50+ AWS assets — flagged
-              overprivileged roles, dormant access keys, and gaps in CloudTrail coverage.
-              Co-authored the remediation guide that reduced cloud risk exposure by 35%.
+              IAM audit across 50+ AWS assets — overprivileged roles, dormant keys, CloudTrail gaps.
+              Co-authored the remediation guide, 35% cloud risk reduction.
             </li>
           </ul>
         </article>

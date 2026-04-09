@@ -40,11 +40,11 @@ const malforgeLines = [
 export default function Projects() {
   return (
     <div className="wrap pt-24 pb-20 md:pt-32">
-      <p className="label">Projects</p>
-      <h1 className="h-lg max-w-xl">Tools I built to solve problems I kept running into.</h1>
+      <h1 className="h-lg max-w-xl">Projects</h1>
+      <p className="text-muted text-sm mt-3 max-w-lg">Tools I built to solve problems I kept running into.</p>
 
-      {/* Domino */}
-      <article id="domino" className="mt-20 scroll-mt-24">
+      {/* Domino — full case study layout with sidebar */}
+      <article id="domino" className="mt-16 scroll-mt-24">
         <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
           <h2 className="font-display text-3xl md:text-4xl">Domino</h2>
           <span className="text-muted text-sm font-mono">2026</span>
@@ -104,16 +104,12 @@ export default function Projects() {
           </aside>
         </div>
 
-        <Terminal
-          prompt="$ domino scan --profile prod --output table"
-          lines={dominoLines}
-          speed={70}
-        />
+        <Terminal prompt="$ domino scan --profile prod --output table" lines={dominoLines} speed={70} />
       </article>
 
       <hr className="rule my-20" />
 
-      {/* MalForge */}
+      {/* MalForge — different layout: no sidebar, full-width sections */}
       <article id="malforge" className="scroll-mt-24">
         <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
           <h2 className="font-display text-3xl md:text-4xl">MalForge</h2>
@@ -121,68 +117,46 @@ export default function Projects() {
         </div>
         <p className="text-accent text-sm mt-2 font-medium font-mono">Multi-Format Payload Generator with AV/EDR Evasion</p>
 
-        <div className="grid md:grid-cols-5 gap-12 mt-10">
-          <div className="md:col-span-3 space-y-8">
-            <div>
-              <h3 className="h-md mb-3">The problem</h3>
-              <p className="text-zinc-300 text-sm leading-relaxed">
-                Generating payloads that bypass modern AV/EDR requires layering multiple evasion
-                techniques across multiple output formats. Doing this manually for each engagement
-                is slow, error-prone, and produces payloads with recognizable patterns.
-              </p>
-            </div>
-            <div>
-              <h3 className="h-md mb-3">What MalForge does</h3>
-              <p className="text-zinc-300 text-sm leading-relaxed">
-                Takes raw shellcode or generates it via msfvenom, runs it through stackable
-                encryption layers — XOR, AES-256-CBC, RC4, Caesar in any order, auto-reversed at
-                runtime — and outputs across 9 formats. Each build produces unique artifacts.
-              </p>
-            </div>
+        <div className="max-w-2xl mt-10 space-y-8">
+          <p className="text-zinc-300 text-sm leading-relaxed">
+            Takes raw shellcode or generates it via msfvenom, runs it through stackable
+            encryption layers — XOR, AES-256-CBC, RC4, Caesar in any order, auto-reversed at
+            runtime — and outputs across 9 formats. Each build produces unique artifacts.
+          </p>
+
+          <div className="grid sm:grid-cols-2 gap-8">
             <div>
               <h3 className="h-md mb-3">Evasion stack</h3>
               <ul className="space-y-2 text-sm text-zinc-400">
-                <li className="dash">Memory: RW allocation, then RX flip — never RWX</li>
+                <li className="dash">RW alloc, then RX flip — never RWX</li>
                 <li className="dash">Runtime AMSI and ETW patching</li>
-                <li className="dash">Sandbox environment detection</li>
-                <li className="dash">Namespace and class name randomization per build</li>
+                <li className="dash">Sandbox detection</li>
+                <li className="dash">Namespace randomization per build</li>
               </ul>
             </div>
             <div>
-              <h3 className="h-md mb-3">Output formats</h3>
-              <div className="flex flex-wrap gap-2">
-                {['C# EXE', 'Process Hollowing', 'DLL', 'VBA Macro', 'HTA', 'PowerShell', 'JScript', 'MSBuild', 'InstallUtil'].map(f => (
-                  <span key={f} className="chip">{f}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-          <aside className="md:col-span-2">
-            <div className="surface p-6 space-y-5 sticky top-24">
-              <div>
-                <p className="text-xs text-subtle uppercase tracking-wider mb-1 font-mono">Stack</p>
-                <p className="text-sm text-zinc-300">Python, C#, PowerShell</p>
-              </div>
-              <div>
-                <p className="text-xs text-subtle uppercase tracking-wider mb-1 font-mono">Encryption</p>
-                <p className="text-sm text-zinc-300">XOR, AES-256-CBC, RC4, Caesar — stackable in any order</p>
-              </div>
-              <div>
-                <p className="text-xs text-subtle uppercase tracking-wider mb-1 font-mono">Delivery</p>
-                <p className="text-sm text-zinc-300">9 formats covering in-memory, disk, and LOLBin execution</p>
-              </div>
-              <a href="https://github.com/gpamarthy/malforge" target="_blank" rel="noreferrer" className="arrow block pt-2">
+              <h3 className="h-md mb-3">Details</h3>
+              <p className="text-xs text-subtle uppercase tracking-wider mb-1 font-mono">Stack</p>
+              <p className="text-sm text-zinc-300 mb-3">Python, C#, PowerShell</p>
+              <p className="text-xs text-subtle uppercase tracking-wider mb-1 font-mono">Encryption</p>
+              <p className="text-sm text-zinc-300 mb-3">XOR, AES-256-CBC, RC4, Caesar — stackable</p>
+              <a href="https://github.com/gpamarthy/malforge" target="_blank" rel="noreferrer" className="arrow block pt-1">
                 View on GitHub
               </a>
             </div>
-          </aside>
+          </div>
+
+          <div>
+            <h3 className="h-md mb-3">Output formats</h3>
+            <div className="flex flex-wrap gap-2">
+              {['C# EXE', 'Process Hollowing', 'DLL', 'VBA Macro', 'HTA', 'PowerShell', 'JScript', 'MSBuild', 'InstallUtil'].map(f => (
+                <span key={f} className="chip">{f}</span>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <Terminal
-          prompt="$ malforge --input shell.bin --encrypt xor,aes --format exe"
-          lines={malforgeLines}
-          speed={90}
-        />
+        <Terminal prompt="$ malforge --input shell.bin --encrypt xor,aes --format exe" lines={malforgeLines} speed={90} />
       </article>
     </div>
   )

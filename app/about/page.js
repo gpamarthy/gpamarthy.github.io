@@ -55,21 +55,20 @@ function Lock() {
 }
 
 const certs = [
-  { name: 'OSEP', note: 'Offensive Security Experienced Penetration Tester. 48-hour proctored attack lab — not multiple choice.', Icon: Target, top: true },
-  { name: 'CRTE', note: 'Certified Red Team Expert. Active Directory exploitation and lateral movement in a live lab environment.', Icon: Key, top: true },
-  { name: 'AWS Security Specialty', note: 'Cloud-native incident response, infrastructure protection, identity and access management.', Icon: Cloud },
-  { name: 'CompTIA Security+', note: 'Threat analysis, risk management, cryptography, network security architecture.', Icon: Shield },
-  { name: 'CCNA', note: 'Network infrastructure, routing and switching, IP addressing, VLANs, ACLs.', Icon: Router },
-  { name: '(ISC)\u00B2 CC', note: 'Security governance, risk management, access controls, incident response fundamentals.', Icon: Lock },
+  { name: 'OSEP', note: '48-hour proctored attack lab. Not multiple choice.', Icon: Target, top: true },
+  { name: 'CRTE', note: 'AD exploitation and lateral movement — live lab.', Icon: Key, top: true },
+  { name: 'AWS Security Specialty', note: 'Cloud IR, infrastructure protection, IAM.', Icon: Cloud },
+  { name: 'CompTIA Security+', note: 'Security foundations.', Icon: Shield },
+  { name: 'CCNA', note: 'Routing, switching, network infra.', Icon: Router },
+  { name: '(ISC)\u00B2 CC', note: 'Governance and risk.', Icon: Lock },
 ]
 
 export default function About() {
   return (
     <div className="wrap pt-24 pb-20 md:pt-32">
-      <p className="label">About</p>
-      <h1 className="h-lg max-w-xl">Background</h1>
+      <h1 className="h-lg max-w-xl">About</h1>
 
-      <div className="max-w-2xl mt-12 space-y-5 text-zinc-300 text-sm leading-relaxed">
+      <div className="max-w-2xl mt-10 space-y-5 text-zinc-300 text-sm leading-relaxed">
         <p>
           Security engineer based in College Park, MD. I studied cybersecurity at the University
           of Maryland (M.Eng., 2025) after completing my CS undergrad at GITAM in India.
@@ -108,113 +107,78 @@ export default function About() {
 
       <hr className="rule" />
 
-      {/* Education */}
+      {/* Education — no cards, just text */}
       <section>
         <p className="label">Education</p>
-        <div className="space-y-4">
-          <div className="surface p-5 flex gap-4 items-start max-w-lg">
-            <div className="cert-icon mt-0.5">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" />
-              </svg>
-            </div>
-            <div>
-              <h3 className="h-md text-base">M.Eng. in Cybersecurity</h3>
-              <p className="text-muted text-sm mt-1">University of Maryland, College Park &mdash; May 2025</p>
-            </div>
+        <div className="space-y-4 max-w-lg">
+          <div>
+            <h3 className="h-md text-base">M.Eng. in Cybersecurity</h3>
+            <p className="text-muted text-sm">University of Maryland, College Park &mdash; May 2025</p>
           </div>
-          <div className="surface p-5 flex gap-4 items-start max-w-lg">
-            <div className="cert-icon mt-0.5">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" />
-              </svg>
-            </div>
-            <div>
-              <h3 className="h-md text-base">B.Tech. in Computer Science</h3>
-              <p className="text-muted text-sm mt-1">Gandhi Institute of Technology and Management, India &mdash; Apr 2023</p>
-            </div>
+          <div>
+            <h3 className="h-md text-base">B.Tech. in Computer Science</h3>
+            <p className="text-muted text-sm">GITAM, India &mdash; Apr 2023</p>
           </div>
         </div>
       </section>
 
       <hr className="rule" />
 
-      {/* Skills — expanded */}
+      {/* Skills — intentionally asymmetric */}
       <section>
         <p className="label">Technical Skills</p>
-        <div className="grid md:grid-cols-2 gap-x-12 gap-y-8">
+
+        {/* Offensive gets the most space — it's the strongest area */}
+        <div className="mb-8">
+          <h3 className="text-sm font-semibold mb-3">Offensive Security & Red Team</h3>
+          <p className="text-zinc-400 text-sm leading-loose max-w-2xl">
+            Penetration testing, AV/EDR evasion, Active Directory exploitation
+            (Kerberoasting, AS-REP Roasting, DCSync, Golden/Silver Ticket, RBCD,
+            ADCS ESC1-8, Shadow Credentials), payload development,
+            process injection (hollowing, early bird), AMSI/CLM/AppLocker bypass,
+            direct/indirect syscalls, D/Invoke, LOLBin abuse, PPID spoofing
+          </p>
+          <p className="text-zinc-400 text-sm leading-loose max-w-2xl mt-3">
+            <span className="text-subtle">Tooling:</span> Cobalt Strike, Sliver, Havoc, Burp Suite, Metasploit, BloodHound/SharpHound,
+            Neo4j, Impacket, Mimikatz, Rubeus, Certipy, PowerView, Evil-WinRM,
+            CrackMapExec, Responder, Nmap, Nessus, Donut, ScareCrow, ffuf,
+            SQLMap, Nuclei, Ligolo-ng, Chisel, proxychains
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-x-12 gap-y-6">
           <div>
-            <h3 className="text-sm font-semibold mb-2 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>
-              Offensive Security & Red Team
-            </h3>
-            <p className="text-zinc-400 text-sm leading-relaxed">
-              Penetration testing, AV/EDR evasion, Active Directory exploitation
-              (Kerberoasting, AS-REP Roasting, DCSync, Golden/Silver Ticket, RBCD,
-              ADCS ESC1-8, Shadow Credentials), payload development,
-              process injection (hollowing, early bird), AMSI/CLM/AppLocker bypass,
-              direct/indirect syscalls, D/Invoke, LOLBin abuse, PPID spoofing
-            </p>
-          </div>
-          <div>
-            <h3 className="text-sm font-semibold mb-2 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>
-              Tooling
-            </h3>
-            <p className="text-zinc-400 text-sm leading-relaxed">
-              Cobalt Strike, Sliver, Havoc, Burp Suite, Metasploit, BloodHound/SharpHound,
-              Neo4j, Impacket, Mimikatz, Rubeus, Certipy, PowerView, Evil-WinRM,
-              CrackMapExec, Responder, Nmap, Nessus, Donut, ScareCrow, ffuf,
-              SQLMap, Nuclei, Ligolo-ng, Chisel, proxychains
-            </p>
-          </div>
-          <div>
-            <h3 className="text-sm font-semibold mb-2 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>
-              Cloud Security
-            </h3>
+            <h3 className="text-sm font-semibold mb-2">Cloud Security</h3>
             <p className="text-zinc-400 text-sm leading-relaxed">
               AWS (IAM, S3, EC2, Lambda, GuardDuty, CloudTrail, Security Hub, Config,
               Organizations, SCPs, VPC Flow Logs), Azure RBAC, IONOS Cloud,
-              Cloudflare (WAF, DDoS mitigation, Access), Pacu, Prowler, ScoutSuite,
-              enumerate-iam, VPC segmentation, KMS, Terraform, iptables
+              Cloudflare (WAF, DDoS, Access), Pacu, Prowler, ScoutSuite,
+              enumerate-iam, Terraform, KMS, iptables
             </p>
           </div>
           <div>
-            <h3 className="text-sm font-semibold mb-2 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>
-              Detection, DFIR & Forensics
-            </h3>
+            <h3 className="text-sm font-semibold mb-2">Detection, DFIR & Forensics</h3>
             <p className="text-zinc-400 text-sm leading-relaxed">
               Splunk, ELK, SIEM correlation rules, Sigma/YARA rule authoring,
-              Sysmon, threat hunting, Volatility, KAPE, Chainsaw, Hayabusa,
-              Eric Zimmerman tools, FTK Imager, Wireshark, CyberChef,
-              incident response, log analysis, CloudTrail auditing
+              Sysmon, Volatility, KAPE, Chainsaw, Hayabusa,
+              Eric Zimmerman tools, FTK Imager, Wireshark, CyberChef
             </p>
           </div>
           <div>
-            <h3 className="text-sm font-semibold mb-2 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>
-              Languages & Development
-            </h3>
+            <h3 className="text-sm font-semibold mb-2">Languages</h3>
             <p className="text-zinc-400 text-sm leading-relaxed">
-              Python, C#/.NET, Bash, PowerShell, JavaScript, Ruby,
-              Git, Docker, GitHub Actions CI/CD
+              Python, C#/.NET, Bash, PowerShell, JavaScript, Ruby, Git, Docker
             </p>
           </div>
           <div>
-            <h3 className="text-sm font-semibold mb-2 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent inline-block"></span>
-              Frameworks & Compliance
-            </h3>
+            <h3 className="text-sm font-semibold mb-2">Frameworks</h3>
             <p className="text-zinc-400 text-sm leading-relaxed">
-              MITRE ATT&CK, PTES, OWASP Top 10, NIST 800-53, PCI-DSS,
-              HIPAA, GDPR, CMMC, secure SDLC
+              MITRE ATT&CK, PTES, OWASP Top 10, NIST 800-53, PCI-DSS, HIPAA, GDPR, CMMC
             </p>
           </div>
         </div>
         <div className="mt-8">
-          <Link href="/attack-map" className="arrow">See full ATT&CK coverage map</Link>
+          <Link href="/attack-map" className="arrow">ATT&CK coverage map</Link>
         </div>
       </section>
     </div>
