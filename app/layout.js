@@ -19,12 +19,14 @@ export const metadata = {
     siteName: 'Goutham Prasanth Pamarthy',
     title: 'Goutham Prasanth Pamarthy | Security Engineer',
     description: 'OSEP & CRTE certified. Pentesting, cloud security, AV/EDR evasion, incident response. Builder of Domino and MalForge.',
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Goutham Prasanth Pamarthy - Security Engineer' }],
   },
   twitter: {
     card: 'summary',
     title: 'Goutham Prasanth Pamarthy | Security Engineer',
     description: 'OSEP & CRTE certified. Pentesting, cloud security, and offensive tool development.',
   },
+  alternates: { canonical: '/' },
   metadataBase: new URL('https://gpamarthy.github.io'),
 }
 

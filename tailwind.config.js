@@ -23,7 +23,7 @@ module.exports = {
         dim: 'rgb(var(--c-dim) / <alpha-value>)',
       },
       maxWidth: {
-        site: '1100px',
+        site: '1320px',
       },
     },
   },

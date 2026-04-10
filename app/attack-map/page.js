@@ -122,7 +122,7 @@ export default function AttackMap() {
         Click a tactic to expand.
       </p>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-12">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 mt-12">
         {tactics.map(tactic => {
           const open = expanded === tactic.id
           return (

@@ -3,6 +3,7 @@ import Terminal from '../../components/terminal'
 export const metadata = {
   title: 'Projects',
   description: 'Domino: AWS IAM privilege escalation path prover. MalForge: multi-format payload generator with AV/EDR evasion.',
+  alternates: { canonical: '/projects/' },
 }
 
 const dominoLines = [
@@ -118,7 +119,7 @@ export default function Projects() {
         </div>
         <p className="text-accent text-sm mt-2 font-medium font-mono">Multi-Format Payload Generator with AV/EDR Evasion</p>
 
-        <div className="max-w-2xl mt-10 space-y-8">
+        <div className="max-w-3xl mt-10 space-y-8">
           <p className="text-zinc-300 text-sm leading-relaxed">
             Takes raw shellcode or generates it via msfvenom, runs it through stackable
             encryption layers (XOR, AES-256-CBC, RC4, Caesar in any order, auto-reversed at

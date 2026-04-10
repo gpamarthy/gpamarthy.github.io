@@ -1,6 +1,7 @@
 export const metadata = {
   title: 'Experience',
   description: 'Work history: Head of Security Engineering at SportsExcitement, GTA at UMD, Security Engineer at Phoenix Global.',
+  alternates: { canonical: '/experience/' },
 }
 
 export default function Experience() {
@@ -9,7 +10,6 @@ export default function Experience() {
       <h1 className="h-lg max-w-xl">Experience</h1>
 
       <div className="mt-12">
-        {/* SportsExcitement */}
         <article className="py-12 first:pt-0 border-b border-surface-bright/50">
           <div className="flex flex-col md:flex-row md:justify-between md:items-baseline gap-2 mb-6">
             <div>
@@ -19,7 +19,7 @@ export default function Experience() {
             <p className="text-subtle text-sm font-mono shrink-0">Nov 2025 - Present</p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8 max-w-md">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8 max-w-lg">
             <div className="pl-3 border-l-2 border-accent/40">
               <p className="num text-2xl">20+</p>
               <p className="num-label text-xs">Pentests run</p>
@@ -34,7 +34,7 @@ export default function Experience() {
             </div>
           </div>
 
-          <ul className="space-y-3 text-zinc-300 text-sm leading-relaxed max-w-2xl">
+          <ul className="space-y-3 text-zinc-300 text-sm leading-relaxed max-w-3xl">
             <li className="dash">
               Conducted 20+ web app and API penetration tests. Every engagement started with
               mapping the attack surface manually before running tools, which uncovered IDOR, stored XSS,
@@ -57,7 +57,6 @@ export default function Experience() {
           </ul>
         </article>
 
-        {/* UMD */}
         <article className="py-12 border-b border-surface-bright/50">
           <div className="flex flex-col md:flex-row md:justify-between md:items-baseline gap-2 mb-6">
             <div>
@@ -67,7 +66,7 @@ export default function Experience() {
             <p className="text-subtle text-sm font-mono shrink-0">Aug 2024 - Jan 2025</p>
           </div>
 
-          <ul className="space-y-3 text-zinc-300 text-sm leading-relaxed max-w-2xl">
+          <ul className="space-y-3 text-zinc-300 text-sm leading-relaxed max-w-3xl">
             <li className="dash">
               Weekly DFIR labs for 60+ grad students: Splunk log analysis, Volatility memory forensics,
               full-chain compromise reconstructions.
@@ -79,7 +78,6 @@ export default function Experience() {
           </ul>
         </article>
 
-        {/* Phoenix Global */}
         <article className="py-12">
           <div className="flex flex-col md:flex-row md:justify-between md:items-baseline gap-2 mb-6">
             <div>
@@ -89,7 +87,7 @@ export default function Experience() {
             <p className="text-subtle text-sm font-mono shrink-0">Jun 2022 - Aug 2022</p>
           </div>
 
-          <ul className="space-y-3 text-zinc-300 text-sm leading-relaxed max-w-2xl">
+          <ul className="space-y-3 text-zinc-300 text-sm leading-relaxed max-w-3xl">
             <li className="dash">
               25+ Splunk correlation rules. Started from raw log data, found the actual noise sources,
               wrote rules around real attacker behavior. False positives dropped 30%, Python

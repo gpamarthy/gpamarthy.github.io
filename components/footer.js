@@ -10,7 +10,7 @@ export default function Footer() {
         </div>
         <div className="flex gap-5 items-center">
           <a href="https://www.linkedin.com/in/gpamarthy7" target="_blank" rel="noreferrer" className="text-muted hover:text-accent transition-colors" aria-label="LinkedIn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
               <path d="M20.47 2H3.53A1.45 1.45 0 002 3.47v17.06A1.45 1.45 0 003.47 22h17.06A1.45 1.45 0 0022 20.53V3.47A1.45 1.45 0 0020.47 2zM8.09 18.74h-3v-9h3v9zM6.59 8.48a1.56 1.56 0 110-3.12 1.56 1.56 0 010 3.12zM18.91 18.74h-3v-4.26c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.18-1.73 2.39v4.34h-3v-9h2.89v1.23h.04a3.16 3.16 0 012.85-1.56c3.05 0 3.61 2 3.61 4.61v4.72z"/>
             </svg>
           </a>
@@ -20,7 +20,7 @@ export default function Footer() {
             </svg>
           </a>
           <a href="mailto:gppamarthy@gmail.com" className="text-muted hover:text-accent transition-colors" aria-label="Email">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" strokeWidth="1.5" aria-hidden="true">
               <rect x="2" y="4" width="20" height="16" rx="2"/>
               <path d="M22 4L12 13 2 4"/>
             </svg>

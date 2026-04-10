@@ -3,13 +3,12 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <>
-      {/* hero */}
       <section className="wrap pt-24 pb-20 md:pt-32 md:pb-28">
         <p className="label">Security Engineer</p>
-        <h1 className="h-xl max-w-3xl">
+        <h1 className="h-xl max-w-4xl">
           Goutham Prasanth<br />Pamarthy
         </h1>
-        <p className="body-lg max-w-2xl mt-6">
+        <p className="body-lg max-w-3xl mt-6">
           I find the attack paths your scanner missed. OSEP and CRTE certified.
           Both require passing live proctored attack labs, not a multiple-choice exam.
           I build offensive security tools, harden cloud infrastructure, and respond to incidents.
@@ -20,29 +19,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* numbers */}
       <div className="border-y border-surface-bright/50 bg-surface/30">
         <div className="wrap py-14 grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div className="relative pl-4 border-l-2 border-accent/40">
-            <p className="num">20+</p>
-            <p className="num-label">Penetration tests delivered</p>
-          </div>
-          <div className="relative pl-4 border-l-2 border-accent/40">
-            <p className="num">40%</p>
-            <p className="num-label">Critical vuln reduction</p>
-          </div>
-          <div className="relative pl-4 border-l-2 border-accent/40">
-            <p className="num">6</p>
-            <p className="num-label">Industry certifications</p>
-          </div>
-          <div className="relative pl-4 border-l-2 border-accent/40">
-            <p className="num">50+</p>
-            <p className="num-label">AWS assets audited</p>
-          </div>
+          {[
+            { val: '20+', label: 'Penetration tests delivered', border: 'border-accent/40' },
+            { val: '40%', label: 'Critical vuln reduction', border: 'border-accent/30' },
+            { val: '6', label: 'Industry certifications', border: 'border-accent/50' },
+            { val: '50+', label: 'AWS assets audited', border: 'border-accent/40' },
+          ].map(s => (
+            <div key={s.val} className={`relative pl-4 border-l-2 ${s.border}`}>
+              <p className="num">{s.val}</p>
+              <p className="num-label">{s.label}</p>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* featured work */}
       <section className="wrap py-20 md:py-28">
         <p className="label">Selected Work</p>
         <h2 className="h-lg">
@@ -51,11 +43,10 @@ export default function Home() {
         </h2>
 
         <div className="mt-16 space-y-6">
-          {/* Domino.full card */}
           <Link href="/projects#domino" className="block group">
             <article className="surface p-8 md:p-12 border-l-2 border-l-accent/50">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-                <div className="max-w-xl">
+                <div className="max-w-2xl">
                   <h3 className="h-md text-xl mb-1">Domino</h3>
                   <p className="text-muted text-sm">AWS IAM Privilege Escalation Path Prover</p>
                   <p className="text-zinc-400 mt-4 leading-relaxed text-sm">
@@ -73,11 +64,11 @@ export default function Home() {
             </article>
           </Link>
 
-          {/* MalForge.compact inline, different layout */}
+          {/* different layout for secondary projects */}
           <Link href="/projects#malforge" className="block group">
             <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 py-6 px-2 border-b border-surface-bright/50 hover:border-accent/20 transition-colors">
               <div className="md:w-48 shrink-0 flex items-center gap-3">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-accent shrink-0">
+                <svg className="text-accent shrink-0" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M12 2v4M4 10l2.5 2M19.5 10L17 12"/>
                   <rect x="6" y="10" width="12" height="10" rx="2"/>
                   <path d="M10 15h4"/>
@@ -97,9 +88,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* cta */}
       <section className="border-t border-surface-bright/50">
-        <div className="wrap py-20 md:py-28 max-w-xl">
+        <div className="wrap py-20 md:py-28 max-w-2xl">
           <h2 className="h-lg">Let&rsquo;s work together.</h2>
           <p className="text-muted mt-4">
             Looking for security engineering roles where I can break things,

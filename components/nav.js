@@ -30,7 +30,8 @@ function Ufo({ size = 26 }) {
 export { Ufo }
 
 export default function Nav() {
-  const path = usePathname()
+  const raw = usePathname()
+  const path = raw.replace(/\/+$/, '') || '/'
   const [open, setOpen] = useState(false)
 
   return (
@@ -68,7 +69,7 @@ export default function Nav() {
             aria-label="Menu"
             aria-expanded={open}
           >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5" fill="none">
               {open
                 ? <path d="M18 6L6 18M6 6l12 12" />
                 : <path d="M4 8h16M4 16h16" />
