@@ -14,7 +14,8 @@ module.exports = {
       colors: {
         bg: 'rgb(var(--c-bg) / <alpha-value>)',
         surface: 'rgb(var(--c-surface) / <alpha-value>)',
-        'surface-bright': 'rgb(var(--c-border) / <alpha-value>)',
+        'surface-bright': 'rgb(var(--c-surface-bright) / <alpha-value>)',
+        border: 'rgb(var(--c-border) / <alpha-value>)',
         accent: 'rgb(var(--c-accent) / <alpha-value>)',
         'accent-hover': 'rgb(var(--c-accent-h) / <alpha-value>)',
         muted: 'rgb(var(--c-muted) / <alpha-value>)',

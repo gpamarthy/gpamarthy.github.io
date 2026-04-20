@@ -101,7 +101,7 @@ export default function Home() {
         <div className="mt-24 text-center">
           <Link href="/projects" className="btn-line px-16 py-6 font-bold group">
             DECRYPT FULL CAMPAIGN LOG
-            <span className="inline-block transition-transform group-hover:translate-x-3 ml-4">>>></span>
+            <span className="inline-block transition-transform group-hover:translate-x-3 ml-4">&gt;&gt;&gt;</span>
           </Link>
         </div>
       </section>
