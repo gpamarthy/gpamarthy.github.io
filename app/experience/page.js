@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function Experience() {
   return (
-    <div className="wrap pt-24 pb-20 md:pt-32">
+    <div className="wrap pt-20 pb-20 md:pt-32">
       <h1 className="h-lg max-w-xl animate-slide-up">Experience</h1>
       <p className="label animate-slide-up">Campaign History</p>
 
@@ -14,7 +14,7 @@ export default function Experience() {
         <article className="relative animate-slide-up" style={{ animationDelay: '100ms' }}>
           <div className="flex flex-col md:flex-row md:justify-between md:items-baseline gap-2 mb-8">
             <div>
-              <h2 className="h-md text-2xl text-white glow-accent">Head of Security Engineering</h2>
+              <h2 className="h-md text-white glow-accent">Head of Security Engineering</h2>
               <p className="text-accent text-sm mt-1 font-mono uppercase tracking-widest">SportsExcitement &middot; Remote</p>
             </div>
             <p className="text-subtle text-xs font-mono shrink-0 border border-surface-bright px-3 py-1 bg-surface/50">2025.11 - PRESENT</p>
@@ -57,7 +57,7 @@ export default function Experience() {
         <article className="relative animate-slide-up" style={{ animationDelay: '200ms' }}>
           <div className="flex flex-col md:flex-row md:justify-between md:items-baseline gap-2 mb-8">
             <div>
-              <h2 className="h-md text-2xl text-white">Graduate Teaching Assistant</h2>
+              <h2 className="h-md text-white">Graduate Teaching Assistant</h2>
               <p className="text-accent text-sm mt-1 font-mono uppercase tracking-widest">University of Maryland</p>
             </div>
             <p className="text-subtle text-xs font-mono shrink-0 border border-surface-bright px-3 py-1 bg-surface/50">2024.08 - 2025.01</p>
@@ -76,7 +76,7 @@ export default function Experience() {
         <article className="relative animate-slide-up" style={{ animationDelay: '300ms' }}>
           <div className="flex flex-col md:flex-row md:justify-between md:items-baseline gap-2 mb-8">
             <div>
-              <h2 className="h-md text-2xl text-white">Security Engineer</h2>
+              <h2 className="h-md text-white">Security Engineer</h2>
               <p className="text-accent text-sm mt-1 font-mono uppercase tracking-widest">Phoenix Global &middot; India</p>
             </div>
             <p className="text-subtle text-xs font-mono shrink-0 border border-surface-bright px-3 py-1 bg-surface/50">2022.06 - 2022.08</p>

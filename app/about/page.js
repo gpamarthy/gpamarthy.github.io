@@ -23,7 +23,7 @@ const certs = [
 
 export default function About() {
   return (
-    <div className="wrap pt-24 pb-20 md:pt-32">
+    <div className="wrap pt-20 pb-20 md:pt-32">
       <h1 className="h-lg max-w-xl">About</h1>
 
       <div className="max-w-3xl mt-10 space-y-5 text-zinc-300 text-sm leading-relaxed">
@@ -68,11 +68,11 @@ export default function About() {
         <p className="label">Education</p>
         <div className="space-y-4 max-w-xl">
           <div>
-            <h3 className="h-md text-base">M.Eng. in Cybersecurity</h3>
+            <h3 className="h-sm text-white">M.Eng. in Cybersecurity</h3>
             <p className="text-muted text-sm">University of Maryland, College Park - May 2025</p>
           </div>
           <div>
-            <h3 className="h-md text-base">B.Tech. in Computer Science</h3>
+            <h3 className="h-sm text-white">B.Tech. in Computer Science</h3>
             <p className="text-muted text-sm">GITAM, India - Apr 2023</p>
           </div>
         </div>
@@ -84,7 +84,7 @@ export default function About() {
         <p className="label">Technical Skills</p>
 
         <div className="mb-8">
-          <h3 className="text-sm font-semibold mb-3">Offensive Security & Red Team</h3>
+          <h3 className="h-sm text-white mb-3">Offensive Security & Red Team</h3>
           <p className="text-zinc-400 text-sm leading-loose max-w-3xl">
             Penetration testing, AV/EDR evasion, Active Directory exploitation
             (Kerberoasting, AS-REP Roasting, DCSync, Golden/Silver Ticket, RBCD,
@@ -102,7 +102,7 @@ export default function About() {
 
         <div className="grid md:grid-cols-2 gap-x-12 gap-y-6">
           <div>
-            <h3 className="text-sm font-semibold mb-2">Cloud Security</h3>
+            <h3 className="h-sm text-white mb-2">Cloud Security</h3>
             <p className="text-zinc-400 text-sm leading-relaxed">
               AWS (IAM, S3, EC2, Lambda, GuardDuty, CloudTrail, Security Hub, Config,
               Organizations, SCPs, VPC Flow Logs), Azure RBAC, IONOS Cloud,
@@ -111,7 +111,7 @@ export default function About() {
             </p>
           </div>
           <div>
-            <h3 className="text-sm font-semibold mb-2">Detection, DFIR & Forensics</h3>
+            <h3 className="h-sm text-white mb-2">Detection, DFIR & Forensics</h3>
             <p className="text-zinc-400 text-sm leading-relaxed">
               Splunk, ELK, SIEM correlation rules, Sigma/YARA rule authoring,
               Sysmon, Volatility, KAPE, Chainsaw, Hayabusa,
@@ -119,13 +119,13 @@ export default function About() {
             </p>
           </div>
           <div>
-            <h3 className="text-sm font-semibold mb-2">Languages</h3>
+            <h3 className="h-sm text-white mb-2">Languages</h3>
             <p className="text-zinc-400 text-sm leading-relaxed">
               Python, C#/.NET, Bash, PowerShell, JavaScript, Ruby, Git, Docker
             </p>
           </div>
           <div>
-            <h3 className="text-sm font-semibold mb-2">Frameworks</h3>
+            <h3 className="h-sm text-white mb-2">Frameworks</h3>
             <p className="text-zinc-400 text-sm leading-relaxed">
               MITRE ATT&CK, PTES, OWASP Top 10, NIST 800-53, PCI-DSS, HIPAA, GDPR, CMMC
             </p>

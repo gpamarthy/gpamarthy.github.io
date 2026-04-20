@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function Projects() {
   return (
-    <div className="wrap pt-24 pb-20 md:pt-32">
+    <div className="wrap pt-20 pb-20 md:pt-32">
       <h1 className="h-lg max-w-xl animate-slide-up">Projects</h1>
       <p className="label animate-slide-up">Active Campaigns</p>
       <p className="text-muted text-sm mt-3 max-w-lg animate-slide-up font-mono uppercase tracking-widest">
@@ -20,7 +20,7 @@ export default function Projects() {
         {projects.map((project, index) => (
           <article key={project.id} id={project.id} className="scroll-mt-24 animate-slide-up" style={{ animationDelay: `${index * 150}ms` }}>
             <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2 mb-10">
-              <h2 className="font-display text-4xl md:text-5xl text-white glow-accent">{project.title}</h2>
+              <h2 className="h-md text-white glow-accent uppercase tracking-widest">{project.title}</h2>
               <span className="text-accent text-sm font-mono border border-accent/30 px-2 py-0.5 bg-accent/5">{project.year}</span>
               <p className="text-subtle text-xs font-mono uppercase tracking-[0.2em] w-full mt-2">{project.tagline}</p>
             </div>
@@ -35,21 +35,21 @@ export default function Projects() {
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="h-md text-white font-mono uppercase tracking-widest text-sm border-b border-surface-bright pb-2">Analysis</h3>
+                  <h3 className="h-sm text-white font-mono uppercase tracking-widest border-b border-surface-bright pb-2">Analysis</h3>
                   <p className="text-zinc-400 text-sm leading-relaxed">
                     {project.problem}
                   </p>
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="h-md text-white font-mono uppercase tracking-widest text-sm border-b border-surface-bright pb-2">Technical Solution</h3>
+                  <h3 className="h-sm text-white font-mono uppercase tracking-widest border-b border-surface-bright pb-2">Technical Solution</h3>
                   <p className="text-zinc-400 text-sm leading-relaxed">
                     {project.solution}
                   </p>
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="h-md text-white font-mono uppercase tracking-widest text-sm border-b border-surface-bright pb-2">Key Tactics</h3>
+                  <h3 className="h-sm text-white font-mono uppercase tracking-widest border-b border-surface-bright pb-2">Key Tactics</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
                     {project.features.map(feature => (
                       <span key={feature} className="dash text-zinc-400">{feature}</span>

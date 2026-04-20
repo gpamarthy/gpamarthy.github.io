@@ -49,7 +49,7 @@ export default function RootLayout({ children }) {
           Skip to content
         </a>
         <Nav />
-        <main id="main" className="pt-16">
+        <main id="main" className="pt-20">
           {children}
         </main>
         <Footer />

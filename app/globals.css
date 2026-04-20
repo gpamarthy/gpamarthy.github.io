@@ -139,63 +139,84 @@ body::before {
     100% { transform: translate(0); }
   }
 
-  .h-xl { font-size: clamp(4rem, 12vw, 8rem); line-height: 0.85; letter-spacing: -0.05em; font-style: italic; }
-  .h-lg { font-size: clamp(3rem, 7vw, 5rem); line-height: 0.9; }
+  .h-xl { 
+    font-size: clamp(3.5rem, 10vw, 7rem); 
+    line-height: 1.1; 
+    letter-spacing: -0.02em; 
+    font-style: italic; 
+    font-weight: 900;
+  }
+  .h-lg { 
+    font-size: clamp(2.5rem, 6vw, 4.5rem); 
+    line-height: 1.1; 
+    font-weight: 800;
+  }
+  .h-md {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  .h-sm {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    font-weight: 600;
+  }
 
   .btn-fill {
     @apply inline-flex items-center gap-3 px-8 py-4 bg-accent text-white font-mono text-[10px] uppercase tracking-[0.2em] font-bold;
     clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0% 30%);
-    transition: all 0.3s;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .btn-fill:hover {
     @apply bg-accent-hover;
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgb(var(--c-accent) / 0.2);
+    box-shadow: 0 10px 20px rgb(var(--c-accent) / 0.3);
   }
 
   .btn-line {
-    @apply inline-flex items-center gap-3 px-8 py-4 border border-white/10 text-white font-mono text-[10px] uppercase tracking-[0.2em] font-bold transition-all;
+    @apply inline-flex items-center gap-3 px-8 py-4 border border-white/20 text-white font-mono text-[10px] uppercase tracking-[0.2em] font-bold transition-all duration-300;
   }
 
   .btn-line:hover {
     @apply border-accent text-accent bg-accent/5;
+    transform: translateY(-2px);
   }
 
   .surface {
-    @apply bg-surface border border-border relative overflow-hidden;
+    @apply bg-surface/50 border border-border relative overflow-hidden backdrop-blur-sm;
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .surface:hover {
-    @apply border-accent/30;
+    @apply border-accent/40 bg-surface/80;
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
   }
 
   .glow-accent { text-shadow: 0 0 20px rgb(var(--c-accent) / 0.4); }
 
   .chip {
-    @apply font-mono text-[9px] px-3 py-1 border border-border text-muted uppercase tracking-widest;
+    @apply font-mono text-[9px] px-3 py-1 border border-white/10 text-muted uppercase tracking-widest bg-white/5;
   }
 
   .code-block {
-    @apply bg-black/40 border border-white/5 p-8 relative overflow-hidden;
+    @apply bg-black/60 border border-white/10 p-8 md:p-12 relative overflow-hidden rounded-sm;
   }
 
   .dash {
-    @apply relative pl-6;
+    @apply relative pl-8;
   }
 
   .dash::before {
     content: '>';
-    @apply absolute left-0 text-accent font-bold opacity-50;
+    @apply absolute left-0 text-accent font-bold opacity-70;
   }
 }
 
-.animate-slide-up { animation: slide-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-@keyframes slide-up { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.animate-slide-up { animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+@keyframes slide-up { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
 .ufo-live { animation: ufo-float 4s ease-in-out infinite; }
-@keyframes ufo-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes ufo-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 

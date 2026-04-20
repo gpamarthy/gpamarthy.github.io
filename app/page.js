@@ -6,7 +6,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="wrap pt-24 pb-20 md:pt-32 md:pb-28 animate-slide-up">
+      <section className="wrap pt-20 pb-16 md:pt-32 md:pb-28 animate-slide-up">
         <p className="label">Level 26 Security Operator</p>
         <h1 className="h-xl glitch-text" data-text="UF0">
           UF0
@@ -18,7 +18,7 @@ export default function Home() {
           Specializing in AWS security architecture and automated vulnerability research.
         </p>
         
-        <div className="flex flex-wrap gap-8 mt-16">
+        <div className="flex flex-wrap gap-6 mt-16">
           <Link href="/projects" className="btn-fill">Initialize Scan</Link>
           <Link href="/contact" className="btn-line">Establish Uplink</Link>
         </div>
@@ -28,7 +28,7 @@ export default function Home() {
         {/* Decorative Grid Accent */}
         <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(rgb(var(--c-accent)) 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
         
-        <div className="wrap py-20 grid grid-cols-2 md:grid-cols-4 gap-12 relative z-10">
+        <div className="wrap py-20 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 relative z-10">
           {[
             { val: '20+', label: 'Campaigns Delivered', border: 'border-accent/40' },
             { val: '40%', label: 'Risk Reduction', border: 'border-neon-blue/30' },
@@ -36,31 +36,30 @@ export default function Home() {
             { val: '50+', label: 'Assets Hardened', border: 'border-accent/40' },
           ].map((s, idx) => (
             <div key={s.val} className={`relative pl-8 border-l-4 ${s.border} animate-slide-up`} style={{ animationDelay: `${idx * 150}ms` }}>
-              <p className="num glow-accent text-5xl italic">{s.val}</p>
+              <p className="num glow-accent text-4xl md:text-5xl italic">{s.val}</p>
               <p className="num-label font-mono tracking-widest text-[9px] mt-3 uppercase opacity-60">{s.label}</p>
             </div>
           ))}
         </div>
       </div>
 
-      <section className="wrap py-32 md:py-48">
+      <section className="wrap py-24 md:py-40">
         <p className="label">Operational Intelligence</p>
         <h2 className="h-lg text-white italic">
-          Defensive frameworks built for<br className="hidden md:block" />
-          the agentic future.
+          Defensive frameworks built for the agentic future.
         </h2>
 
-        <div className="mt-24 space-y-16">
+        <div className="mt-20 space-y-12">
           {featured.map((p, idx) => (
             <Link key={p.id} href={`/projects#${p.id}`} className="block group animate-slide-up" style={{ animationDelay: `${idx * 200}ms` }}>
-              <article className={`p-12 md:p-16 border transition-all duration-700 group-hover:translate-x-4 ${
+              <article className={`p-8 md:p-12 border transition-all duration-700 group-hover:translate-x-4 ${
                 idx === 0 ? 'surface border-accent/40 group-hover:bg-accent/5' : 'surface border-white/10 group-hover:border-accent/20 group-hover:bg-accent/5'
               }`}>
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-12">
+                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-12">
                   <div className="max-w-2xl">
                     <div className="flex items-center gap-5 mb-6">
-                      <h3 className="h-md text-3xl text-white font-mono reveal-text uppercase tracking-widest">{p.title}</h3>
-                      <span className="text-[10px] font-mono text-accent border border-accent/40 px-3 py-1 uppercase tracking-[0.2em] bg-accent/10 animate-pulse">ACTIVE_LOG</span>
+                      <h3 className="h-md text-white font-mono uppercase tracking-widest">{p.title}</h3>
+                      <span className="text-[10px] font-mono text-accent border border-accent/40 px-3 py-1 uppercase tracking-[0.2em] bg-accent/10">ACTIVE_LOG</span>
                     </div>
                     
                     <p className="text-zinc-50 mt-10 text-lg font-medium italic border-l-4 border-accent pl-8 py-2 font-mono bg-white/5">
@@ -73,14 +72,14 @@ export default function Home() {
                     
                     <div className="flex flex-wrap gap-4 mt-12">
                       {p.stack.split(', ').slice(0, 4).map(tech => (
-                        <span key={tech} className="chip bg-transparent border-white/10 text-[10px]">{tech}</span>
+                        <span key={tech} className="chip">{tech}</span>
                       ))}
                     </div>
                   </div>
                   
-                  <div className="flex flex-col items-end justify-between self-stretch shrink-0">
+                  <div className="flex flex-col lg:items-end justify-between self-stretch shrink-0">
                     <span className="arrow translate-x-0 group-hover:translate-x-6 transition-transform duration-500 font-bold text-lg">ANALYSIS_REQ</span>
-                    <div className="hidden md:flex flex-col items-end gap-3 mt-auto">
+                    <div className="hidden lg:flex flex-col lg:items-end gap-3 mt-auto">
                       <p className="text-[10px] text-subtle font-mono uppercase tracking-[0.4em] mb-2 opacity-40">System Telemetry</p>
                       <div className="flex gap-10">
                         {p.metrics.map(m => (
@@ -98,7 +97,7 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="mt-24 text-center">
+        <div className="mt-20 text-center">
           <Link href="/projects" className="btn-line px-16 py-6 font-bold group">
             DECRYPT FULL CAMPAIGN LOG
             <span className="inline-block transition-transform group-hover:translate-x-3 ml-4">&gt;&gt;&gt;</span>
@@ -107,14 +106,14 @@ export default function Home() {
       </section>
 
       <section className="border-t border-white/5 bg-gradient-to-b from-transparent to-accent/5">
-        <div className="wrap py-32 md:py-48 max-w-4xl">
+        <div className="wrap py-24 md:py-40 max-w-4xl">
           <p className="label">Uplink Status</p>
           <h2 className="h-lg text-white glow-accent italic mb-10">Neural connection established.</h2>
           <p className="text-zinc-400 font-mono text-lg leading-loose max-w-2xl">
             Currently accepting high-fidelity security engineering missions. 
             Ready to exploit infrastructure gaps and neutralize threat actors.
           </p>
-          <div className="flex flex-wrap gap-8 mt-16">
+          <div className="flex flex-wrap gap-6 mt-16">
             <Link href="/contact" className="btn-fill px-12 py-5">Initiate Deployment</Link>
             <a href={`${process.env.BASE_PATH || ''}/resume.pdf`} download className="btn-line px-12 py-5">Exfiltrate Dossier</a>
           </div>
