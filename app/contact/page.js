@@ -13,13 +13,13 @@ export default function Contact() {
 
       <div className="mt-12 max-w-lg space-y-6">
         <div className="flex items-center gap-6 group">
-          <a href="mailto:gppamarthy@gmail.com" className="flex items-center gap-3 text-lg hover:text-accent transition-colors">
+          <a href="mailto:pamarthygp@gmail.com" className="flex items-center gap-3 text-lg hover:text-accent transition-colors">
             <svg className="text-subtle group-hover:text-accent shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/>
             </svg>
-            gppamarthy@gmail.com
+            pamarthygp@gmail.com
           </a>
-          <CopyButton text="gppamarthy@gmail.com" />
+          <CopyButton text="pamarthygp@gmail.com" />
         </div>
 
         <div className="flex items-center gap-6 group">
