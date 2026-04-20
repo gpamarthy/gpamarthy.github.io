@@ -13,13 +13,13 @@ export default function Contact() {
 
       <div className="mt-12 max-w-lg space-y-6">
         <div className="flex items-center gap-6 group">
-          <a href="mailto:gpamarthy@gmail.com" className="flex items-center gap-3 text-lg hover:text-accent transition-colors">
+          <a href="mailto:gppamarthy@gmail.com" className="flex items-center gap-3 text-lg hover:text-accent transition-colors">
             <svg className="text-subtle group-hover:text-accent shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/>
             </svg>
-            gpamarthy@gmail.com
+            gppamarthy@gmail.com
           </a>
-          <CopyButton text="gpamarthy@gmail.com" />
+          <CopyButton text="gppamarthy@gmail.com" />
         </div>
 
         <div className="flex items-center gap-6 group">
@@ -33,7 +33,7 @@ export default function Contact() {
         </div>
 
         <div className="flex gap-6 text-sm text-muted pt-4">
-          <a href="https://www.linkedin.com/in/gpamarthy" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/gpamarthy7" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">LinkedIn</a>
           <a href="https://github.com/gpamarthy" target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">GitHub</a>
           <a href={`${process.env.BASE_PATH || ''}/resume.pdf`} download className="hover:text-accent transition-colors">Resume PDF</a>
         </div>
