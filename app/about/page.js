@@ -45,9 +45,9 @@ export default function About() {
         </p>
       </div>
 
-      <hr className="rule" />
+      <hr className="rule animate-slide-up" style={{ animationDelay: '400ms' }} />
 
-      <section>
+      <section className="animate-slide-up" style={{ animationDelay: '500ms' }}>
         <p className="label">Certifications</p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
           {certs.map(c => (
@@ -62,9 +62,9 @@ export default function About() {
         </div>
       </section>
 
-      <hr className="rule" />
+      <hr className="rule animate-slide-up" style={{ animationDelay: '600ms' }} />
 
-      <section>
+      <section className="animate-slide-up" style={{ animationDelay: '700ms' }}>
         <p className="label">Education</p>
         <div className="space-y-4 max-w-xl">
           <div>
@@ -78,9 +78,9 @@ export default function About() {
         </div>
       </section>
 
-      <hr className="rule" />
+      <hr className="rule animate-slide-up" style={{ animationDelay: '800ms' }} />
 
-      <section>
+      <section className="animate-slide-up" style={{ animationDelay: '900ms' }}>
         <p className="label">Technical Skills</p>
 
         <div className="mb-8">

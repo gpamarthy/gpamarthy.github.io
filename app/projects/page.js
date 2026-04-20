@@ -10,13 +10,13 @@ export const metadata = {
 export default function Projects() {
   return (
     <div className="wrap pt-20 pb-20 md:pt-32">
-      <h1 className="h-lg max-w-xl animate-slide-up">Projects</h1>
       <p className="label animate-slide-up">Active Campaigns</p>
+      <h1 className="h-lg max-w-xl animate-slide-up">Projects</h1>
       <p className="text-muted text-sm mt-3 max-w-lg animate-slide-up font-mono uppercase tracking-widest">
         Automated offensive and defensive tooling designed to exploit gaps and harden infrastructure.
       </p>
 
-      <div className="mt-16 space-y-32">
+      <div className="mt-20 space-y-32">
         {projects.map((project, index) => (
           <article key={project.id} id={project.id} className="scroll-mt-24 animate-slide-up" style={{ animationDelay: `${index * 150}ms` }}>
             <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2 mb-10">

@@ -7,10 +7,10 @@ export const metadata = {
 export default function Experience() {
   return (
     <div className="wrap pt-20 pb-20 md:pt-32">
-      <h1 className="h-lg max-w-xl animate-slide-up">Experience</h1>
       <p className="label animate-slide-up">Campaign History</p>
+      <h1 className="h-lg max-w-xl animate-slide-up">Experience</h1>
 
-      <div className="mt-12 space-y-20">
+      <div className="mt-20 space-y-24">
         <article className="relative animate-slide-up" style={{ animationDelay: '100ms' }}>
           <div className="flex flex-col md:flex-row md:justify-between md:items-baseline gap-2 mb-8">
             <div>
