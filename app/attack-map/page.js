@@ -110,25 +110,47 @@ function heat(n) {
 }
 
 export default function AttackMap() {
-  const [expanded, setExpanded] = useState(null)
+  const [expanded, setExpanded] = useState([])
   const total = tactics.reduce((s, t) => s + t.techniques.length, 0)
+
+  function toggle(id) {
+    if (expanded.includes(id)) {
+      setExpanded(expanded.filter(x => x !== id))
+    } else {
+      setExpanded([...expanded, id])
+    }
+  }
 
   return (
     <div className="wrap pt-24 pb-20 md:pt-32">
       <h1 className="h-lg">ATT&CK Coverage</h1>
-      <p className="text-muted text-sm mt-3 max-w-xl">
-        {total} techniques across {tactics.length} tactics. Mapped from pentests,
-        red team work, tool development, incident response, and OSEP/CRTE labs.
-        Click a tactic to expand.
-      </p>
+      <div className="flex flex-wrap items-center gap-6 mt-12">
+        <div className="flex gap-4">
+          <button
+            onClick={() => setExpanded(tactics.map(t => t.id))}
+            className="text-[10px] font-mono uppercase tracking-widest text-accent hover:underline"
+          >
+            Expand All
+          </button>
+          <button
+            onClick={() => setExpanded([])}
+            className="text-[10px] font-mono uppercase tracking-widest text-muted hover:text-white"
+          >
+            Collapse All
+          </button>
+        </div>
+        <p className="text-[10px] font-mono uppercase tracking-widest text-subtle ml-auto">
+          {total} techniques across {tactics.length} tactics
+        </p>
+      </div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 mt-12">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 mt-6">
         {tactics.map(tactic => {
-          const open = expanded === tactic.id
+          const open = expanded.includes(tactic.id)
           return (
             <div key={tactic.id}>
               <button
-                onClick={() => setExpanded(open ? null : tactic.id)}
+                onClick={() => toggle(tactic.id)}
                 className={`w-full text-left p-4 rounded border transition-all ${heat(tactic.techniques.length)} ${
                   open ? 'ring-1 ring-accent/50' : ''
                 }`}
